@@ -49,34 +49,35 @@ export function HeroSection() {
           </h1>
           
           <p 
-            className={`text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed transition-all duration-700 delay-200 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            className={`text-lg text-foreground max-w-xl mx-auto leading-relaxed transition-all duration-700 delay-200 ${
+              isVisible ? "opacity-80 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            Your toolkit to stop configuring and start innovating. 
-            Securely build, deploy, and scale AI-powered applications.
+            Hey. I'm{" "} 
+            <span className="font-(--font-geist-pixel-line) text-primary opacity-100">
+              Rayan Alrashed</span>, and welcome to my portfolio. I'm a Computer Science student with a deep passion for cybersecurity, honing my skills through hands-on labs and personal projects.
           </p>
         </div>
         
         {/* CTAs */}
         <div 
-          className={`flex flex-col sm:flex-row items-center justify-center gap-3 mb-20 transition-all duration-700 delay-300 ${
+          className={`flex flex-col sm:flex-row items-center justify-center gap-3 mb-20 transition-all duration-700 delay-300  ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
           <Button 
             size="lg" 
-            className="bg-foreground hover:bg-foreground/90 text-background rounded-none px-6 h-11 text-sm font-medium group"
+            className=" cursor-pointer bg-foreground hover:bg-foreground/90 text-background rounded-none px-6 h-11 text-sm font-medium group"
           >
-            Get a demo
+            View my Projects
             <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-0.5" />
           </Button>
           <Button 
             size="lg" 
             variant="outline" 
-            className="h-11 px-6 text-sm font-medium hover:bg-secondary/50 bg-transparent"
+            className="cursor-pointer h-11 px-6 text-sm font-medium hover:bg-secondary/50 bg-transparent"
           >
-            Explore the Product
+            Let's Connect
           </Button>
         </div>
         
