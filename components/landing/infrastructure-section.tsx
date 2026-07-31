@@ -45,7 +45,7 @@ export function InfrastructureSection() {
               Always Learning.
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              I'm Rayan Alrashed, a Computer Science student with a passion for cybersecurity, technology, and understanding the systems that power our digital world. Currently pursuing my studies in computer science at <span className="text-primary font-heading">Imam Mohammed Bin Saud University</span>, I focus on building a strong foundation in programming & security concepts while continuously expanding my knowledge through hands-on learning and personal projects.
+              I'm Rayan Alrashed, a Computer Science student with a passion for cybersecurity, technology, and understanding the systems that power our digital world. As I currently pursue my studies in computer science at <span className="text-primary font-heading">Imam Mohammed Bin Saud University</span>, I focus on building a strong foundation in programming & security concepts while continuously expanding my knowledge through hands-on learning and personal projects.
 <br></br>
 <br></br>
 My interest in technology began with a simple curiosity about how things work and a desire to explore beyond what was visible on the surface. Over time, that curiosity developed into a passion for cybersecurity, where I became fascinated by the challenge of analyzing systems, identifying weaknesses, and finding ways to make technology more secure.
