@@ -192,10 +192,30 @@ font-family: var(--font-jetbrains);  }
 
 .cursor-blink {
   display: inline-block;
-  width: 2px;
+  width: 6px;
   height: 0.9em;
   margin-left: 0.15em;
   background: currentColor;
   vertical-align: -0.08em;
   animation: cursor-blink 1.5s steps(1) infinite;
+}
+
+@keyframes gridHorizontal {
+  from {
+    transform: translateX(-80px);
+  }
+
+  to {
+    transform: translateX(calc(100vw + 80px));
+  }
+}
+
+@keyframes gridVertical {
+  from {
+    transform: translateY(-80px);
+  }
+
+  to {
+    transform: translateY(calc(100vh + 80px));
+  }
 }

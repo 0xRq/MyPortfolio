@@ -6,6 +6,7 @@ import { ArrowRight } from "lucide-react";
 import { AsciiSphere } from "./ascii-sphere";
 import { AsciiWave } from "./ascii-wave";
 import { AsciiTorus } from "./ascii-torus"; // Added import for AsciiTorus
+import GridBackground from "./grid-bg";
 
 export function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -20,7 +21,11 @@ export function HeroSection() {
       <div className="absolute inset-0 grid-pattern opacity-50" />
       
      
-      
+      {/* Animated Grid */}
+<div className="absolute inset-0 opacity-90 pointer-events-none overflow-hidden">
+  <GridBackground />
+</div>
+
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-12 lg:py-24">
         {/* Badge */}
         <div 
