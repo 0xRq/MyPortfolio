@@ -45,7 +45,7 @@ export function AsciiWave({ className = "" }: { className?: string }) {
         }
       }
 
-      time += 0.03;
+      time += 0.008;
       animationId = requestAnimationFrame(animate);
     };
 

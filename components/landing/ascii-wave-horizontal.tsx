@@ -55,7 +55,7 @@ export function AsciiWaveHorizontal({ className = "" }: { className?: string }) 
         }
       }
 
-      time += 0.03;
+      time += 0.008;
       animationId = requestAnimationFrame(animate);
     };
 

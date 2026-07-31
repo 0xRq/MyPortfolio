@@ -42,10 +42,10 @@ export function HeroSection() {
             }`}
             style={{ fontFamily: 'var(--font-geist-pixel-line), monospace' }}
           >
-            <span className="text-balance">The complete platform to</span>
+            <span className="text-balance">Curious by Nature.</span>
             <br />
-            <span className="text-balance">build the</span>{" "}
-            <span className="text-primary">future.</span>
+            <span className="text-balance">Driven by </span>{" "}
+            <span className="text-primary">Technology.</span>
           </h1>
           
           <p 
@@ -66,7 +66,7 @@ export function HeroSection() {
         >
           <Button 
             size="lg" 
-            className="bg-foreground hover:bg-foreground/90 text-background px-6 h-11 text-sm font-medium group"
+            className="bg-foreground hover:bg-foreground/90 text-background rounded-none px-6 h-11 text-sm font-medium group"
           >
             Get a demo
             <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-0.5" />
@@ -74,35 +74,13 @@ export function HeroSection() {
           <Button 
             size="lg" 
             variant="outline" 
-            className="h-11 px-6 text-sm font-medium border-border hover:bg-secondary/50 bg-transparent"
+            className="h-11 px-6 text-sm font-medium hover:bg-secondary/50 bg-transparent"
           >
             Explore the Product
           </Button>
         </div>
         
-        {/* Stats with company logos style */}
-        <div 
-          className={`grid grid-cols-2 lg:grid-cols-4 gap-px bg-border rounded-xl overflow-hidden card-shadow transition-all duration-700 delay-400 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          }`}
-        >
-          {[
-            { value: "20 days", label: "saved on daily builds.", company: "STRIPE" },
-            { value: "98%", label: "faster time to market.", company: "VERCEL" },
-            { value: "300%", label: "increase in throughput.", company: "LINEAR" },
-            { value: "6x", label: "faster to build + deploy.", company: "NOTION" },
-          ].map((stat) => (
-            <div key={stat.company} className="p-6 lg:p-8 flex justify-between min-h-[140px] bg-black shadow-none lg:py-8 flex-col">
-              <div>
-                <span className="text-xl lg:text-2xl font-semibold">{stat.value}</span>
-                <span className="text-muted-foreground text-sm lg:text-base"> {stat.label}</span>
-              </div>
-              <div className="font-mono text-xs text-muted-foreground/60 tracking-widest mt-4">
-                {stat.company}
-              </div>
-            </div>
-          ))}
-        </div>
+        
       </div>
     </section>
   );

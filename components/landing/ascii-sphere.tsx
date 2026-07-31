@@ -80,7 +80,7 @@ export function AsciiSphere() {
         }
       }
       
-      time += 0.015;
+      time += 0.008;
       animationRef.current = requestAnimationFrame(animate);
     };
 

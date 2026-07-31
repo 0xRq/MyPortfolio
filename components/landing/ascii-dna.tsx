@@ -60,7 +60,7 @@ export function AsciiDna({ className = "" }: { className?: string }) {
         ctx.fillText(char2, x2 * 8, y * 6 + 6);
       }
 
-      time += 0.04;
+      time += 0.008;
       animationId = requestAnimationFrame(animate);
     };
 

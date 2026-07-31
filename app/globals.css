@@ -130,6 +130,8 @@
     font-family: var(--font-geist-pixel-line), 'Geist Pixel Line', monospace;
     font-weight: 400;
   }
+  button {
+font-family: var(--font-jetbrains);  }
 }
 
 @layer utilities {
