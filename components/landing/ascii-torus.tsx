@@ -16,8 +16,8 @@ export function AsciiTorus({ className = "" }: { className?: string }) {
     let A = 0;
     let B = 0;
 
-    const width = 80;
-    const height = 50;
+    const width = 40;
+    const height = 40;
     const chars = ".,-~:;=!*#$@";
 
     const R1 = 1;

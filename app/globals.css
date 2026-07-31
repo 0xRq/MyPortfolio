@@ -178,3 +178,24 @@ font-family: var(--font-jetbrains);  }
     background-size: 60px 60px;
   }
 }
+
+@keyframes cursor-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.cursor-blink {
+  display: inline-block;
+  width: 2px;
+  height: 0.9em;
+  margin-left: 0.15em;
+  background: currentColor;
+  vertical-align: -0.08em;
+  animation: cursor-blink 1.5s steps(1) infinite;
+}

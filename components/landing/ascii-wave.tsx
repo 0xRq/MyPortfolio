@@ -16,8 +16,8 @@ export function AsciiWave({ className = "" }: { className?: string }) {
     let time = 0;
 
     const chars = "█▓▒░ ";
-    const width = 120;
-    const height = 40;
+    const width = 80;
+    const height = 30;
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
