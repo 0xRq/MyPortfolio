@@ -30,9 +30,9 @@ export default function Home() {
       >
         <Navigation />
         <HeroSection />
+        <InfrastructureSection />
         <FeaturesSection />
         <HowItWorksSection />
-        <InfrastructureSection />
         <MetricsSection />
         <IntegrationsSection />
         <SecuritySection />

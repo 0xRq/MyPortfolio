@@ -7,9 +7,6 @@ const regions = [
   { name: "North America", nodes: 5, latency: "< 20ms" },
   { name: "Europe", nodes: 4, latency: "< 25ms" },
   { name: "Asia Pacific", nodes: 3, latency: "< 30ms" },
-  { name: "South America", nodes: 2, latency: "< 40ms" },
-  { name: "Middle East", nodes: 2, latency: "< 35ms" },
-  { name: "Africa", nodes: 1, latency: "< 50ms" },
 ];
 
 export function InfrastructureSection() {
@@ -43,44 +40,18 @@ export function InfrastructureSection() {
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
             }`}
           >
-            <p className="text-sm font-mono text-primary mb-4">// GLOBAL INFRASTRUCTURE</p>
+            <p className="text-sm text-primary mb-4">// ABOUT ME</p>
             <h2 className="text-4xl lg:text-5xl font-semibold tracking-tight mb-6 text-balance">
-              Built for planetary scale.
+              Always Learning.
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              Deploy your AI models across our global edge network. Automatic failover, 
-              intelligent routing, and sub-100ms latency anywhere in the world.
+              I'm Rayan Alrashed, a Computer Science student with a passion for cybersecurity, technology, and understanding the systems that power our digital world. Currently pursuing my studies in computer science at <span className="text-primary font-heading">Imam Mohammed Bin Saud University</span>, I focus on building a strong foundation in programming & security concepts while continuously expanding my knowledge through hands-on learning and personal projects.
+<br></br>
+<br></br>
+My interest in technology began with a simple curiosity about how things work and a desire to explore beyond what was visible on the surface. Over time, that curiosity developed into a passion for cybersecurity, where I became fascinated by the challenge of analyzing systems, identifying weaknesses, and finding ways to make technology more secure.
             </p>
 
-            <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <pre className="font-mono text-2xl text-primary">⚡</pre>
-                <div>
-                  <h3 className="font-semibold mb-1">Lightning Fast CDN</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Edge caching and smart routing for optimal performance
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <pre className="font-mono text-2xl text-primary">🔄</pre>
-                <div>
-                  <h3 className="font-semibold mb-1">Auto-Scaling</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Handle traffic spikes with zero configuration
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <pre className="font-mono text-2xl text-primary">🛡️</pre>
-                <div>
-                  <h3 className="font-semibold mb-1">DDoS Protection</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Built-in protection against malicious traffic
-                  </p>
-                </div>
-              </div>
-            </div>
+            
           </div>
 
           {/* Right: Regions Grid */}
@@ -133,15 +104,15 @@ export function InfrastructureSection() {
               <div className="grid grid-cols-3 gap-4 text-center">
                 <div>
                   <div className="font-mono text-2xl font-semibold text-primary">17</div>
-                  <div className="text-xs text-muted-foreground">Data Centers</div>
+                  <div className="text-xs text-muted-foreground">Internships</div>
                 </div>
                 <div>
                   <div className="font-mono text-2xl font-semibold text-primary">99.99%</div>
-                  <div className="text-xs text-muted-foreground">Uptime SLA</div>
+                  <div className="text-xs text-muted-foreground">Certificates</div>
                 </div>
                 <div>
                   <div className="font-mono text-2xl font-semibold text-primary">1.2B</div>
-                  <div className="text-xs text-muted-foreground">Requests/day</div>
+                  <div className="text-xs text-muted-foreground">Projects</div>
                 </div>
               </div>
             </div>
