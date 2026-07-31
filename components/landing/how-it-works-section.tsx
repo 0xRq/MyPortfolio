@@ -186,11 +186,84 @@ export function HowItWorksSection() {
   );
 }
 
+type Token = { type: string; value: string };
+
+function tokenizeLine(line: string): Token[] {
+  const tokens: Token[] = [];
+  let i = 0;
+
+  while (i < line.length) {
+    // Comment: // to end of line
+    if (line[i] === '/' && line[i + 1] === '/') {
+      tokens.push({ type: 'comment', value: line.slice(i) });
+      break;
+    }
+
+    // String: single or double quoted
+    if (line[i] === "'" || line[i] === '"') {
+      const quote = line[i];
+      let j = i + 1;
+      while (j < line.length && line[j] !== quote) j++;
+      tokens.push({ type: 'string', value: line.slice(i, j + 1) });
+      i = j + 1;
+      continue;
+    }
+
+    // Keyword: nexus, process, env
+    const kwMatch = line.slice(i).match(/^(nexus|process|env)/);
+    if (kwMatch) {
+      tokens.push({ type: 'keyword', value: kwMatch[0] });
+      i += kwMatch[0].length;
+      continue;
+    }
+
+    // Method: .identifier
+    const methodMatch = line.slice(i).match(/^(\.\w+)/);
+    if (methodMatch) {
+      tokens.push({ type: 'method', value: methodMatch[0] });
+      i += methodMatch[0].length;
+      continue;
+    }
+
+    // Punctuation
+    if ('{}()[]:\n'.includes(line[i])) {
+      tokens.push({ type: 'punctuation', value: line[i] });
+      i++;
+      continue;
+    }
+
+    // Plain text — accumulate
+    let j = i + 1;
+    while (j < line.length) {
+      const c = line[j];
+      if (c === '/' || c === "'" || c === '"' || '{}()[]:\n'.includes(c)) break;
+      if (line.slice(j).match(/^(nexus|process|env|\.\w+)/)) break;
+      j++;
+    }
+    tokens.push({ type: 'plain', value: line.slice(i, j) });
+    i = j;
+  }
+
+  return tokens;
+}
+
+function escapeHtml(s: string): string {
+  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
 function highlightCode(line: string): string {
-  return line
-    .replace(/(nexus|process|env)/g, '<span class="text-foreground">$1</span>')
-    .replace(/(\.\w+)/g, '<span class="text-primary">$1</span>')
-    .replace(/('.*?'|".*?")/g, '<span class="text-green-400">$1</span>')
-    .replace(/(\/\/.*$)/g, '<span class="text-muted-foreground/50">$1</span>')
-    .replace(/(\{|\}|\(|\)|\[|\]|:)/g, '<span class="text-muted-foreground/70">$1</span>');
+  const tokens = tokenizeLine(line);
+  return tokens
+    .map(({ type, value }) => {
+      const escaped = escapeHtml(value);
+      switch (type) {
+        case 'keyword':   return `<span class="text-foreground">${escaped}</span>`;
+        case 'method':    return `<span class="text-primary">${escaped}</span>`;
+        case 'string':    return `<span class="text-green-400">${escaped}</span>`;
+        case 'comment':   return `<span class="text-muted-foreground/50">${escaped}</span>`;
+        case 'punctuation': return `<span class="text-muted-foreground/70">${escaped}</span>`;
+        default:          return escaped;
+      }
+    })
+    .join('');
 }
