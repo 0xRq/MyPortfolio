@@ -53,7 +53,7 @@ export function HeroSection() {
           </h1>
           
           <p 
-            className={`text-lg text-foreground max-w-xl mx-auto leading-relaxed transition-all duration-700 delay-200 ${
+            className={`text-md md:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed transition-all duration-700 delay-200 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
