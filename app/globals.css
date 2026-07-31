@@ -202,20 +202,18 @@ font-family: var(--font-jetbrains);  }
 
 @keyframes gridHorizontal {
   from {
-    transform: translateX(-80px);
+    transform: translateX(-200px);
   }
-
   to {
-    transform: translateX(calc(100vw + 80px));
+    transform: translateX(100vw);
   }
 }
 
 @keyframes gridVertical {
   from {
-    transform: translateY(-80px);
+    transform: translateY(-200px);
   }
-
   to {
-    transform: translateY(calc(100vh + 80px));
+    transform: translateY(100vh);
   }
 }
