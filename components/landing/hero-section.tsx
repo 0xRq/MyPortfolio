@@ -57,7 +57,7 @@ export function HeroSection() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            Hey. I'm{" "} 
+            Hey there. I'm{" "} 
             <span className="font-(--font-geist-pixel-line) text-primary font-semibold opacity-100" style={{ fontFamily: 'var(--font-geist-pixel-line), monospace' }}>
               Rayan Alrashed</span>, and welcome to my portfolio. I'm a Computer Science student with a deep passion for cybersecurity, honing my skills through hands-on labs and personal projects.
           </p>
