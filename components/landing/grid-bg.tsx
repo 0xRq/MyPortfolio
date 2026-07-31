@@ -26,8 +26,8 @@ export default function GridBackground() {
         className="absolute inset-0"
         style={{
           backgroundImage: `
-            linear-gradient(rgba(255,255,255,.07) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,.07) 1px, transparent 1px)
+            linear-gradient(rgba(255,255,255,.07) 2px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,.07) 2px, transparent 1px)
           `,
           backgroundSize: `${GRID_X}px ${GRID_Y}px`,
         }}
