@@ -2,24 +2,41 @@
 
 import { useEffect, useState, useRef } from "react";
 import { AsciiDna } from "./ascii-dna";
+import {
+  MessageCircleQuestion,
+  Compass,
+  BookOpen,
+  type LucideIcon
+} from "lucide-react";
 
-const regions = [
-  { name: "Curiosity", 
-    nodes: 1, 
-    latency: "< 20ms",
-    description: "Driven by a constant desire to understand how systems work and explore new technologies."
-   },
+type Region = {
+  name: string;
+  icon: LucideIcon;
+  nodes: number;
+  description: string;
+};
 
-  { name: "Adaptability", 
-    nodes: 2, 
-    latency: "< 25ms" ,
-    description: "I enjoy breaking down complex problems into smaller, manageable solutions."
+const regions: Region[] = [
+  {
+    name: "Curiosity",
+    icon: MessageCircleQuestion,
+    nodes: 1,
+    description:
+      "Driven by a constant desire to understand how systems work and explore new technologies.",
   },
-
-  { name: "Fast Learner", 
-    nodes: 3, 
-    latency: "< 30ms",
-    description: "I enjoy breaking down complex problems into smaller, manageable solutions."
+  {
+    name: "Adaptability",
+    icon: Compass,
+    nodes: 2,
+    description:
+      "I adapt quickly to new environments, challenges, and technologies while continuously improving my skills.",
+  },
+  {
+    name: "Fast Learner",
+    icon: BookOpen,
+    nodes: 3,
+    description:
+      "I enjoy learning new concepts quickly and applying them through hands-on projects.",
   },
 ];
 
@@ -104,35 +121,45 @@ return (
           }`}
         >
           <div className="grid grid-cols-1 gap-3">
-            {regions.map((region, index) => (
-              <div
-                key={region.name}
-                className="group relative bg-card rounded-lg p-5 border border-border card-shadow hover:border-primary/50 transition-all duration-300"
-                style={{ transitionDelay: `${index * 50}ms` }}
-              >
-                <div className="flex items-center justify-between mb-2">
-                  <h2 className="font-semibold text-lg">{region.name}</h2>
-                </div>
+  {regions.map((region, index) => {
+    const Icon = region.icon;
 
-                <p className="mb-4 text-md text-muted-foreground leading-relaxed pr-16">
-                  {region.description}
-                </p>
+    return (
+      <div
+        key={region.name}
+        className="group relative bg-card rounded-lg p-5 border border-border card-shadow hover:border-primary/50 transition-all duration-300"
+        style={{ transitionDelay: `${index * 50}ms` }}
+      >
+        <div className="flex items-center justify-between mb-2">
+          <div className="flex items-center gap-2">
+            <Icon className="w-5 h-5 mr-1 text-primary" />
+            <h2 className="font-semibold text-lg">{region.name}</h2>
+          </div>
+        </div>
 
-                <div className="flex items-center gap-2">
-                  <div className="flex gap-1">
-                    {Array.from({ length: region.nodes }).map((_, i) => (
-                      <span
-                        key={i}
-                        className="w-2 h-2 rounded-full bg-primary/70 animate-pulse"
-                        style={{ animationDelay: `${i * 200}ms` }}
-                      />
-                    ))}
-                  </div>
-                  <span className="text-xs text-primary font-mono">  // {index + 1} </span>
-                </div>
-              </div>
+        <p className="mb-4 text-md text-muted-foreground leading-relaxed pr-16">
+          {region.description}
+        </p>
+
+        <div className="flex items-center gap-2">
+          <div className="flex gap-1">
+            {Array.from({ length: region.nodes }).map((_, i) => (
+              <span
+                key={i}
+                className="w-2 h-2 rounded-full bg-primary/70 animate-pulse"
+                style={{ animationDelay: `${i * 200}ms` }}
+              />
             ))}
           </div>
+
+          <span className="text-xs text-primary font-mono">
+            // {index + 1}
+          </span>
+        </div>
+      </div>
+    );
+  })}
+</div>
 
             {/* Stats */}
             <div className="mt-8 p-6 rounded-lg bg-foreground/5 border border-border">
@@ -142,11 +169,11 @@ return (
                   <div className="text-xs text-muted-foreground">Internships</div>
                 </div>
                 <div>
-                  <div className="font-mono text-2xl font-semibold text-primary">99.99%</div>
+                  <div className="font-mono text-2xl font-semibold text-primary">14</div>
                   <div className="text-xs text-muted-foreground">Certificates</div>
                 </div>
                 <div>
-                  <div className="font-mono text-2xl font-semibold text-primary">1.2B</div>
+                  <div className="font-mono text-2xl font-semibold text-primary">6</div>
                   <div className="text-xs text-muted-foreground">Projects</div>
                 </div>
               </div>
