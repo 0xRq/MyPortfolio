@@ -5,30 +5,39 @@ import { useEffect, useRef, useState } from "react";
 const steps = [
   {
     number: "01",
-    title: "Connect",
-    description: "Integrate with 200+ data sources. One-click setup for databases, APIs, and cloud services.",
-    code: `nexus.connect({
-  source: 'postgresql',
-  config: process.env.DB_URL
-})`,
+    title: "Reconnaissance",
+    description: "Analyze the target environment, gather intelligence, and identify potential attack surfaces.",
+    code: `samsepi0l@kali:~$ nmap -sV -sC target.com`,
   },
   {
     number: "02",
-    title: "Configure",
-    description: "Define your AI workflows with our visual builder or code-first approach.",
-    code: `nexus.workflow('process-orders', {
-  trigger: 'new_order',
-  steps: ['validate', 'enrich', 'notify']
-})`,
+    title: "Security Testing",
+    description: "Assess applications, networks, and systems to discover and validate security weaknesses.",
+    code: `samsepi0l@kali:~$ ffuf -u https://target.com/FUZZ -w wordlist.txt
+
+    /admin      [Status: 403]
+    /login      [Status: 200]
+    /dashboard      [Status: 401] `,
   },
   {
     number: "03",
-    title: "Deploy",
-    description: "Ship to production instantly. Auto-scaling, monitoring, and 99.9% uptime included.",
-    code: `nexus.deploy({
-  env: 'production',
-  region: 'auto'
-}) // Live in < 30s`,
+    title: "Report & Remediation",
+    description: "Document findings, explain risks, and provide recommendations to improve security posture.",
+    code: `samsepi0l@kali:~$ cat security-report.md
+    
+    # Vulnerability Report
+
+Finding: Broken Access Control
+Severity: High
+
+Impact:
+- Unauthorized resource access
+- Potential data exposure
+
+Recommendation:
+- Implement proper authorization checks
+- Review access control policies
+- Apply security updates`,
   },
 ];
 
@@ -42,7 +51,7 @@ export function HowItWorksSection() {
       ([entry]) => {
         if (entry.isIntersecting) setIsVisible(true);
       },
-      { threshold: 0.1 }
+      { threshold: 0.2 }
     );
 
     if (sectionRef.current) observer.observe(sectionRef.current);
@@ -79,7 +88,7 @@ export function HowItWorksSection() {
         </div>
 
         {/* Main content */}
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid xl:grid-cols-2 gap-16 items-start">
           {/* Steps list */}
           <div className="space-y-2">
             {steps.map((step, index) => (
@@ -190,59 +199,75 @@ type Token = { type: string; value: string };
 
 function tokenizeLine(line: string): Token[] {
   const tokens: Token[] = [];
-  let i = 0;
 
-  while (i < line.length) {
-    // Comment: // to end of line
-    if (line[i] === '/' && line[i + 1] === '/') {
-      tokens.push({ type: 'comment', value: line.slice(i) });
-      break;
-    }
+  // Terminal prompt
+  const promptMatch = line.match(
+    /^([a-zA-Z0-9_-]+)@([a-zA-Z0-9_-]+):([^\s$]+)(\$|#)\s/
+  );
 
-    // String: single or double quoted
-    if (line[i] === "'" || line[i] === '"') {
-      const quote = line[i];
-      let j = i + 1;
-      while (j < line.length && line[j] !== quote) j++;
-      tokens.push({ type: 'string', value: line.slice(i, j + 1) });
-      i = j + 1;
-      continue;
-    }
+  let remaining = line;
 
-    // Keyword: nexus, process, env
-    const kwMatch = line.slice(i).match(/^(nexus|process|env)/);
-    if (kwMatch) {
-      tokens.push({ type: 'keyword', value: kwMatch[0] });
-      i += kwMatch[0].length;
-      continue;
-    }
+  if (promptMatch) {
+    tokens.push({
+      type: "username",
+      value: promptMatch[1]
+    });
 
-    // Method: .identifier
-    const methodMatch = line.slice(i).match(/^(\.\w+)/);
-    if (methodMatch) {
-      tokens.push({ type: 'method', value: methodMatch[0] });
-      i += methodMatch[0].length;
-      continue;
-    }
+    tokens.push({
+      type: "plain",
+      value: "@"
+    });
 
-    // Punctuation
-    if ('{}()[]:\n'.includes(line[i])) {
-      tokens.push({ type: 'punctuation', value: line[i] });
-      i++;
-      continue;
-    }
+    tokens.push({
+      type: "hostname",
+      value: promptMatch[2]
+    });
 
-    // Plain text — accumulate
-    let j = i + 1;
-    while (j < line.length) {
-      const c = line[j];
-      if (c === '/' || c === "'" || c === '"' || '{}()[]:\n'.includes(c)) break;
-      if (line.slice(j).match(/^(nexus|process|env|\.\w+)/)) break;
-      j++;
-    }
-    tokens.push({ type: 'plain', value: line.slice(i, j) });
-    i = j;
+    tokens.push({
+      type: "plain",
+      value: ":"
+    });
+
+    tokens.push({
+      type: "path",
+      value: promptMatch[3]
+    });
+
+    tokens.push({
+      type: "prompt",
+      value: promptMatch[4]
+    });
+
+    remaining = line.slice(promptMatch[0].length);
   }
+
+
+  // Command
+const parts = remaining.split(/\s+/).filter(Boolean);
+
+  if (parts.length > 0) {
+  tokens.push({
+    type: "command",
+    value: " " + parts[0]
+  });
+
+  parts.slice(1).forEach(part => {
+
+    if (part.startsWith("-")) {
+      tokens.push({
+        type: "flag",
+        value: " " + part
+      });
+
+    } else {
+      tokens.push({
+        type: "argument",
+        value: " " + part
+      });
+    }
+
+  });
+}
 
   return tokens;
 }
@@ -251,19 +276,51 @@ function escapeHtml(s: string): string {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
-function highlightCode(line: string): string {
-  const tokens = tokenizeLine(line);
-  return tokens
-    .map(({ type, value }) => {
-      const escaped = escapeHtml(value);
-      switch (type) {
-        case 'keyword':   return `<span class="text-foreground">${escaped}</span>`;
-        case 'method':    return `<span class="text-primary">${escaped}</span>`;
-        case 'string':    return `<span class="text-green-400">${escaped}</span>`;
-        case 'comment':   return `<span class="text-muted-foreground/50">${escaped}</span>`;
-        case 'punctuation': return `<span class="text-muted-foreground/70">${escaped}</span>`;
-        default:          return escaped;
-      }
-    })
-    .join('');
+function highlightCode(line:string){
+
+const tokens = tokenizeLine(line);
+
+return tokens.map(({type,value})=>{
+
+const escaped = escapeHtml(value);
+
+switch(type){
+
+case "username":
+return `<span class="text-green-400">${escaped}</span>`;
+
+case "hostname":
+return `<span class="text-cyan-400">${escaped}</span>`;
+
+case "path":
+return `<span class="text-blue-400">${escaped}</span>`;
+
+case "prompt":
+return `<span class="text-foreground">${escaped}</span>`;
+
+case "command":
+return `<span class="text-white font-semibold">${escaped}</span>`;
+
+case "flag":
+return `<span class="text-yellow-400">${escaped}</span>`;
+
+case "argument":
+return `<span class="text-muted-foreground">${escaped}</span>`;
+
+case "success":
+return `<span class="text-green-400">${escaped}</span>`;
+
+case "warning":
+return `<span class="text-yellow-400">${escaped}</span>`;
+
+case "error":
+return `<span class="text-red-400">${escaped}</span>`;
+
+default:
+return escaped;
+
+}
+
+}).join("");
+
 }
