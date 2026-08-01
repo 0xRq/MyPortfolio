@@ -44,10 +44,10 @@ export function HeroSection() {
             }`}
             style={{ fontFamily: 'var(--font-geist-pixel-line), monospace' }}
           >
-            <span className="text-balance">Curious by Nature.</span>
+            
             <br />
-            <span className="text-balance">Driven by </span>{" "}
-            <span className="text-primary">Technology.
+            <span className="text-balance">Hello, </span>{" "}
+            <span className="text-primary">Friend.
               <span className="cursor-blink ml-1"></span>
             </span>
           </h1>
@@ -57,7 +57,7 @@ export function HeroSection() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            Hello, friend. I'm{" "} 
+            I'm{" "} 
             <span className="font-(--font-geist-pixel-line) text-primary font-semibold opacity-100" style={{ fontFamily: 'var(--font-geist-pixel-line), monospace' }}>
               Rayan Alrashed</span>, and welcome to my portfolio. I'm a Computer Science student with a deep passion for cybersecurity, honing my skills through hands-on labs and personal projects.
           </p>

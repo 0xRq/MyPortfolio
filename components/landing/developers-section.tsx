@@ -40,20 +40,12 @@ console.log('Batch ID:', batch.id)`,
 
 const features = [
   { 
-    title: "TypeScript-first", 
+    title: "Cybersecurity", 
     description: "Full type safety with auto-generated types for all API responses."
   },
   { 
-    title: "Streaming built-in", 
+    title: "Security Tools", 
     description: "Native support for streaming responses with async iterators."
-  },
-  { 
-    title: "Edge-ready", 
-    description: "Works in Node.js, Deno, Bun, and edge runtimes out of the box."
-  },
-  { 
-    title: "Zero dependencies", 
-    description: "Lightweight SDK with no external dependencies. Just 12KB gzipped."
   },
 ];
 
@@ -73,9 +65,9 @@ export function DevelopersSection() {
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left: Content */}
           <div>
-            <p className="text-sm font-mono text-primary mb-3">// FOR DEVELOPERS</p>
+            <p className="text-sm font-mono text-primary mb-3">// My Skills</p>
             <h2 className="text-3xl lg:text-5xl font-semibold tracking-tight mb-6 text-balance">
-              Built for developers,<br />by developers.
+              Skillset
             </h2>
             <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
               A thoughtfully designed SDK that gets out of your way. 
@@ -86,10 +78,10 @@ export function DevelopersSection() {
             <div className="grid gap-6">
               {features.map((feature) => (
                 <div key={feature.title} className="flex gap-4">
-                  <div className="w-1 bg-primary/30 rounded-full shrink-0" />
+                  <div className="w-1 bg-primary/40 rounded-full shrink-0" />
                   <div>
-                    <h3 className="font-medium mb-1">{feature.title}</h3>
-                    <p className="text-sm text-muted-foreground">{feature.description}</p>
+                    <h1 className="font-medium text-xl mb-1">{feature.title}</h1>
+                    <p className="text-md text-muted-foreground">{feature.description}</p>
                   </div>
                 </div>
               ))}

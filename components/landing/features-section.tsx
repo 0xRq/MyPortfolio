@@ -2,154 +2,48 @@
 
 import { useEffect, useRef, useState, useCallback } from "react";
 import { AsciiCube } from "./ascii-cube";
+import {
+  ShieldPlus,
+  Wrench,
+  CodeXml,
+} from "lucide-react";
 
-// Animated ASCII generators
-const asciiAnimations = {
-  neural: (frame: number) => {
-    const states = ["◉", "◎", "○", "◎"];
-    const getChar = (offset: number) => states[(frame + offset) % states.length];
-    return `  ┌───────┐
-  │ ${getChar(0)} ${getChar(1)} ${getChar(2)} │
-  │ ${getChar(3)} ${getChar(4)} ${getChar(5)} │
-  │ ${getChar(6)} ${getChar(7)} ${getChar(8)} │
-  └───────┘`;
-  },
-  workflow: (frame: number) => {
-    const arrows = ["─", "═", "━", "═"];
-    const pulse = ["►", "▸", "▹", "▸"];
-    const a = arrows[frame % arrows.length];
-    const p = pulse[frame % pulse.length];
-    return `  ┌─┐   ┌─┐
-  │A├${a}${a}${p}│B│
-  └─┘   └┬┘
-        ┌▼┐
-        │C│
-        └─┘`;
-  },
-  security: (frame: number) => {
-    const lock = ["◈", "◇", "◆", "◇"];
-    const bars = ["░", "▒", "▓", "▒"];
-    const l = lock[frame % lock.length];
-    const b = bars[frame % bars.length];
-    return `   ╔═══╗
-   ║ ${l} ║
-  ┌╨───╨┐
-  │${b}${b}${b}${b}${b}│
-  └─────┘`;
-  },
-  analytics: (frame: number) => {
-    const heights = [
-      [1, 2, 3, 2],
-      [2, 3, 2, 3],
-      [3, 2, 3, 1],
-      [2, 1, 2, 2],
-    ];
-    const h = heights[frame % heights.length];
-    const bar = (height: number) => {
-      if (height === 3) return "█";
-      if (height === 2) return "▄";
-      return "▁";
-    };
-    return `  │${h[0] === 3 ? "▄" : " "}${h[1] === 3 ? "▄" : " "}${h[2] === 3 ? "▄" : " "}${h[3] === 3 ? "▄" : " "}
-  │${bar(h[0])} ${bar(h[1])} ${bar(h[2])} ${bar(h[3])}
-  │█ █ █ █
-  └────────`;
-  },
-  globe: (frame: number) => {
-    const rotations = [
-      `    .--.
-   /    \\
-  | (  ) |
-   \\    /
-    '--'`,
-      `    .--.
-   /    \\
-  |  () |
-   \\    /
-    '--'`,
-      `    .--.
-   /    \\
-  |  (  )|
-   \\    /
-    '--'`,
-      `    .--.
-   /    \\
-  | ()  |
-   \\    /
-    '--'`,
-    ];
-    return rotations[frame % rotations.length];
-  },
-  api: (frame: number) => {
-    const methods = ["GET", "POST", "PUT", "GET"];
-    const arrows = [
-      "────────►",
-      "═══════►",
-      "━━━━━━━►",
-      "────────►",
-    ];
-    const m = methods[frame % methods.length];
-    const a = arrows[frame % arrows.length];
-    return `  ${m} /api
-  ${a}
-  ◄────────
-  { data }`;
-  },
-};
 
 const features = [
   {
-    title: "Neural Processing",
-    description: "Advanced deep learning models that understand context and adapt to your specific business needs.",
+    title: "Cybersecurity",
+    icon: ShieldPlus,
+    description: [
+      "Penetration Testing",
+      "Web Application Security",
+      "Network Security",
+      "Security Monitoring (SOC)",
+    ],
     animationKey: "neural" as const,
   },
   {
-    title: "Smart Workflows",
-    description: "Visual workflow builder with drag-and-drop simplicity. Chain AI actions to create powerful automations.",
-    animationKey: "workflow" as const,
-  },
-  {
-    title: "Enterprise Security",
-    description: "SOC 2 Type II certified with end-to-end encryption. Your data never leaves your control.",
+    title: "Security Tools",
+    icon: Wrench,
+    description: [
+      "Burp Suite",
+      "Nmap",
+      "Wireshark",
+      "Metasploit",
+    ],
     animationKey: "security" as const,
   },
   {
-    title: "Real-time Analytics",
-    description: "Live dashboards and instant insights. Monitor performance and optimize workflows on the fly.",
-    animationKey: "analytics" as const,
-  },
-  {
-    title: "Global Scale",
-    description: "Distributed infrastructure across 12 regions. Sub-100ms latency worldwide.",
-    animationKey: "globe" as const,
-  },
-  {
-    title: "API First",
-    description: "RESTful and GraphQL APIs with comprehensive SDKs. Integrate Nexus into any stack.",
-    animationKey: "api" as const,
+    title: "Programming & Dev",
+    icon: CodeXml,
+    description: [
+      "Python",
+      "Web Development",
+      "TypeScript",
+      "Next.js",
+    ],
+    animationKey: "workflow" as const,
   },
 ];
-
-function AnimatedAscii({ animationKey }: { animationKey: keyof typeof asciiAnimations }) {
-  const [frame, setFrame] = useState(0);
-  
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setFrame((f) => f + 1);
-    }, 400);
-    return () => clearInterval(interval);
-  }, []);
-  
-  const getAscii = useCallback(() => {
-    return asciiAnimations[animationKey](frame);
-  }, [animationKey, frame]);
-  
-  return (
-    <pre className="font-mono text-xs text-primary leading-tight whitespace-pre">
-      {getAscii()}
-    </pre>
-  );
-}
 
 function FeatureCard({
   feature,
@@ -173,24 +67,33 @@ function FeatureCard({
     return () => observer.disconnect();
   }, []);
 
+const Icon = feature.icon;
+
   return (
     <div
       ref={cardRef}
-      className={`group relative rounded-xl p-8 card-shadow transition-all duration-700 hover:border-primary/50 bg-transparent border-0 border-none border-transparent ${
+      className={`group relative rounded-xl p-8 card-shadow transition-all duration-700 hover:border-primary/50 bg-transparent border border-border/60 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
       style={{ transitionDelay: `${index * 100}ms` }}
     >
-      {/* Animated ASCII Icon */}
-      <div className="mb-6 h-20 flex items-center">
-        <AnimatedAscii animationKey={feature.animationKey} />
-      </div>
+      
 
       {/* Content */}
-      <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
-      <p className="text-sm text-muted-foreground leading-relaxed">
-        {feature.description}
-      </p>
+      
+      {/* Icon */}
+<div className="mb-5 w-12 h-12 rounded-lg border border-primary/20 bg-primary/5 flex items-center justify-center">
+  <Icon className="w-6 h-6 text-primary" />
+</div>
+      <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+      <ul className="space-y-2">
+  {feature.description.map((item) => (
+    <li key={item} className="flex items-center gap-2">
+      <span className="text-primary">▸</span>
+      {item}
+    </li>
+  ))}
+</ul>
     </div>
   );
 }
@@ -204,7 +107,7 @@ export function FeaturesSection() {
       ([entry]) => {
         if (entry.isIntersecting) setIsVisible(true);
       },
-      { threshold: 0.1 }
+      { threshold: 0.2 }
     );
 
     if (sectionRef.current) observer.observe(sectionRef.current);
@@ -221,15 +124,14 @@ export function FeaturesSection() {
         {/* Header with ASCII cube */}
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
           <div>
-            <p className="text-sm font-mono text-primary mb-3">// PLATFORM</p>
+            <p className="text-sm font-mono text-primary mb-3">// MY SKILLS</p>
             <h2
               className={`text-3xl lg:text-5xl font-semibold tracking-tight mb-6 transition-all duration-700 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
-              <span className="text-balance">Everything you need</span>
-              <br />
-              <span className="text-balance">to build at scale.</span>
+              
+              <span className="text-balance">Skillset</span>
             </h2>
             <p
               className={`text-lg text-muted-foreground leading-relaxed max-w-lg transition-all duration-700 delay-100 ${

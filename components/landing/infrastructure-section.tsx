@@ -49,7 +49,7 @@ export function InfrastructureSection() {
       ([entry]) => {
         if (entry.isIntersecting) setIsVisible(true);
       },
-      { threshold: 0.1 }
+      { threshold: 0.2 }
     );
 
     if (sectionRef.current) observer.observe(sectionRef.current);
@@ -95,8 +95,8 @@ return (
           <div className="h-full bg-card rounded-lg border border-border card-shadow p-8 lg:p-10">
             <div className="space-y-6">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I'm Rayan Alrashed, a Saudi Arabian Computer Science student specializing in cybersecurity. I am currently pursuing my studies at{" "}
-                <span className="text-primary font-heading">
+                I'm <span className="text-primary">Rayan Alrashed</span>, a Saudi Arabian Computer Science student specializing in cybersecurity. I am currently pursuing my studies at{" "}
+                <span className="font-semibold">
                   Imam Mohammed Bin Saud University
                 </span>
                 , where I continue to build my foundation in programming & security concepts. I actively seek opportunities to expand my technical knowledge, strengthen my skills, and challenge myself through hands-on projects & practical experiences.
