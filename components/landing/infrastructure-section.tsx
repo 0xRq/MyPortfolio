@@ -75,10 +75,10 @@ return (
             : "opacity-0 translate-y-4"
         }`}
       >
-        <p className="text-sm font-mono text-primary mb-4">// ABOUT ME</p>
+        <p className="text-sm font-mono text-primary mb-4">// WHOAMI</p>
 
         <h2 className="text-4xl lg:text-5xl font-semibold tracking-tight text-balance">
-          Whoami
+          About Me
         </h2>
       </div>
 
@@ -92,7 +92,7 @@ return (
               : "opacity-0 -translate-x-8"
           }`}
         >
-          <div className="h-full bg-card rounded-lg border border-border card-shadow p-8 lg:p-10">
+          <div className="h-full bg-card rounded-lg border border-border card-shadow p-6 lg:p-10">
             <div className="space-y-6">
               <p className="text-lg text-muted-foreground leading-relaxed">
                 I'm <span className="text-primary">Rayan Alrashed</span>, a Saudi Arabian Computer Science student specializing in cybersecurity. I am currently pursuing my studies at{" "}

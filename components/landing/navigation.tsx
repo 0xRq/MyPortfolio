@@ -5,10 +5,10 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { name: "Platform", href: "#features" },
-  { name: "Technology", href: "#how-it-works" },
-  { name: "Metrics", href: "#metrics" },
-  { name: "Developers", href: "#developers" },
+  { name: "Home", href: "#" },
+  { name: "About Me", href: "#how-it-works" },
+  { name: "My Projects", href: "#metrics" },
+  { name: "Blogs", href: "#developers" },
 ];
 
 export function Navigation() {
@@ -42,7 +42,7 @@ export function Navigation() {
               </span>
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-primary/10" />
             </div>
-            <span className="text-xl font-bold tracking-tight">Nexus</span>
+            <span className="text-xl font-bold tracking-tight">Rayan</span>
           </a>
 
           {/* Desktop Navigation */}
@@ -60,14 +60,12 @@ export function Navigation() {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-3">
-            <Button variant="ghost" size="sm" className="text-muted-foreground pointer-events-none">
-              Sign in
-            </Button>
+            
             <Button
               size="sm"
-              className="bg-foreground hover:bg-foreground/90 text-background"
+              className="bg-foreground hover:bg-foreground/90 text-background cursor-pointer"
             >
-              Get Started
+              Let's Connect
             </Button>
           </div>
 
