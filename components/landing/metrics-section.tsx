@@ -51,47 +51,47 @@ const certifications = [
     logo: "./Google_logo.svg",
     issuer: "Google",
     title: "Google Cybersecurity Professional Certificate",
-    credential: "9-course Professional Certificate",
+    credential: "9-course program covering cybersecurity fundamentals, Linux, SQL, Python, SIEM, and security operations",
     button: "Verify Credential",
     href: "https://..."
   },
   {
     logo: "./Tuwaiq_Academy.svg",
     issuer: "Tuwaiq Academy",
-    title: "SOC Level 1 Bootcamp",
-    credential: "Security Operations Center",
+    title: "Penetration Testing Bootcamp",
+    credential: "6-week intensive training focused on reconnaissance, vulnerability assessment, exploitation, and reporting",
     button: "View Certificate",
     href: "https://..."
   },
   {
     logo: "./STC-logo.svg",
-    issuer: "Tuwaiq Academy",
-    title: "Penetration Testing Bootcamp",
-    credential: "6-week intensive training",
+    issuer: "STC",
+    title: "Incident Response Internship",
+    credential: "Virtual internship focused on security operations, incident handling, and cybersecurity workflows",
     button: "View Certificate",
     href: "https://..."
   },
   {
     logo: "./CC_Logo.png",
-    issuer: "Stanford Online",
-    title: "Writing in the Sciences",
-    credential: "Stanford University",
+    issuer: "Clifford Chance",
+    title: "Cybersecurity Analyst Intern",
+    credential: "Applied experience in security analysis, threat investigation, and cybersecurity research",
     button: "Verify Certificate",
     href: "https://..."
   },
   {
     logo: "./Udemy_logo.svg",
-    issuer: "Google",
-    title: "AI Essentials",
-    credential: "Generative AI Fundamentals",
-    button: "Verify Credential",
+    issuer: "Udemy",
+    title: "Ethical Hacking",
+    credential: "Training covering penetration testing methodologies, security tools, and techniques",
+    button: "Verify Certificate",
     href: "https://..."
   },
   {
     logo: "./Udemy_logo.svg",
     issuer: "Udemy",
-    title: "Social Engineering & Ethical Hacking",
-    credential: "Professional Development",
+    title: "Social Engineering",
+    credential: "Professional training focused on human-based security risks and social engineering techniques",
     button: "View Certificate",
     href: "https://..."
   },
@@ -118,7 +118,7 @@ export function MetricsSection() {
           <div>
             <p className="text-sm font-mono text-primary mb-3">// CERTIFICATIONS</p>
             <h2 className="text-3xl lg:text-5xl font-semibold tracking-tight text-balance">
-              My Certifications
+             Certifications & Courses
             </h2>
           </div>
           <div className="flex items-center gap-3 font-mono text-sm text-muted-foreground">
@@ -174,19 +174,8 @@ export function MetricsSection() {
   ))}
 </div>
         
-        {/* Live Activity Feed */}
-        <div className="mt-12 p-6 rounded-xl bg-card border border-border card-shadow">
-          <div className="flex items-center gap-2 mb-4">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="font-mono text-sm text-muted-foreground">Live activity feed</span>
-          </div>
-          <div className="font-mono text-xs space-y-2 text-muted-foreground overflow-hidden h-24">
-            <ActivityLine time="now" event="POST /api/v2/inference" region="us-east-1" status="200" latency="23ms" />
-            <ActivityLine time="1s" event="GET /api/v2/models" region="eu-west-1" status="200" latency="18ms" />
-            <ActivityLine time="2s" event="POST /api/v2/inference" region="ap-south-1" status="200" latency="45ms" />
-            <ActivityLine time="3s" event="POST /api/v2/batch" region="us-west-2" status="202" latency="12ms" />
-          </div>
-        </div>
+        
+        
       </div>
     </section>
   );

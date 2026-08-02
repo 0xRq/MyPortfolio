@@ -83,7 +83,7 @@ return (
       </div>
 
       {/* Two-column layout */}
-      <div className="grid lg:grid-cols-2 gap-16 items-stretch">
+      <div className="grid lg:grid-cols-2 gap-16 items-start">
         {/* Left */}
         <div
           className={`h-full transition-all duration-700 ${
@@ -92,8 +92,8 @@ return (
               : "opacity-0 -translate-x-8"
           }`}
         >
-          <div className="h-full bg-card rounded-lg border border-border card-shadow p-6 lg:p-10">
-            <div className="space-y-6">
+          <div className="h-full pr-16 flex flex-col">
+            <div className="space-y-7 flex flex-col h-full">
               <p className="text-lg text-muted-foreground leading-relaxed">
                 I'm <span className="text-primary">Rayan Alrashed</span>, a Saudi Arabian Computer Science student specializing in cybersecurity. I am currently pursuing my studies at{" "}
                 <span className="font-semibold">
@@ -101,20 +101,29 @@ return (
                 </span>
                 , where I continue to build my foundation in programming & security concepts. I actively seek opportunities to expand my technical knowledge, strengthen my skills, and challenge myself through hands-on projects & practical experiences.
               </p>
-<br></br>
+
   <div className="h-px bg-border" />
 
-<br></br>
+
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Throughout my journey, I have developed strong adaptability and a passion for continuous learning. I enjoy challenging myself with new concepts and finding creative solutions to complex problems. I have pursued professional certifications, including Google's Professional Cybersecurity Certificate and Google AI Essentials, while strengthening my skills through specialized Penetration Testing bootcamps & personal projects.
               </p>
+
+              {/* CV Download Button */}
+    <a
+      href="/Rayan-Alrashed-CV.pdf"
+      download
+      className="mt-auto flex w-full items-center justify-center rounded-lg bg-foreground/5 border border-border px-6 py-9 text-md text-muted-foreground font-medium font-mono transition-all hover:border-primary hover:text-primary"
+    >
+      Download CV
+    </a>
             </div>
           </div>
         </div>
 
         {/* Right: Regions Grid */}
         <div
-          className={`transition-all duration-700 delay-200 ${
+          className={`h-full flex flex-col transition-all duration-700 delay-200 ${
             isVisible
               ? "opacity-100 translate-x-0"
               : "opacity-0 translate-x-8"
@@ -162,7 +171,7 @@ return (
 </div>
 
             {/* Stats */}
-            <div className="mt-8 p-6 rounded-lg bg-foreground/5 border border-border">
+            <div className="mt-9 p-6 rounded-lg bg-foreground/5 border border-border">
               <div className="grid grid-cols-3 gap-4 text-center">
                 <div>
                   <div className="font-mono text-2xl font-semibold text-primary">17</div>

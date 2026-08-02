@@ -101,7 +101,7 @@ export function IntegrationsSection() {
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               <div>
                 <h3 className="text-2xl lg:text-3xl font-semibold mb-4">
-                  Need a custom integration?
+                  Check out my blog.
                 </h3>
                 <p className="text-muted-foreground mb-6">
                   Our REST and GraphQL APIs make it easy to build custom integrations. 

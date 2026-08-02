@@ -26,18 +26,11 @@ const steps = [
     code: `samsepi0l@kali:~$ cat security-report.md
     
     # Vulnerability Report
-
 Finding: Broken Access Control
-Severity: High
-
-Impact:
-- Unauthorized resource access
-- Potential data exposure
 
 Recommendation:
 - Implement proper authorization checks
-- Review access control policies
-- Apply security updates`,
+- Review access control policies`,
   },
 ];
 
