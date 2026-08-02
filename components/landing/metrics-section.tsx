@@ -72,7 +72,7 @@ const certifications = [
     href: "https://..."
   },
   {
-    logo: "./CC_Logo.png",
+    logo: "./Clifford_Chance.svg.webp",
     issuer: "Clifford Chance",
     title: "Cybersecurity Analyst Intern",
     credential: "Applied experience in security analysis, threat investigation, and cybersecurity research",

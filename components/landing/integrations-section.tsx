@@ -81,7 +81,7 @@ export function IntegrationsSection() {
     {integration.skills.map((skill) => (
       <span
         key={skill}
-        className="rounded-full border border-border bg-muted/30 px-2.5 py-1 text-xs font-medium text-muted-foreground transition-colors "
+        className="rounded-full border border-border bg-muted/30 px-2.5 py-1 text-xs font-medium font-mono text-muted-foreground transition-colors "
       >
         {skill}
       </span>
@@ -101,14 +101,13 @@ export function IntegrationsSection() {
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               <div>
                 <h3 className="text-2xl lg:text-3xl font-semibold mb-4">
-                  Check out my blog.
+                  Check Out My Blog
                 </h3>
                 <p className="text-muted-foreground mb-6">
-                  Our REST and GraphQL APIs make it easy to build custom integrations. 
-                  Plus, get access to webhooks for real-time events.
+                  A collection of writeups covering penetration testing, home lab projects, networking, and software development.
                 </p>
-                <button className="px-6 py-3 bg-foreground text-background rounded-lg font-medium hover:bg-foreground/90 transition-colors">
-                  View API Docs
+                <button className="px-6 py-3 bg-foreground text-background rounded-lg font-medium hover:bg-foreground/90 transition-colors cursor-pointer">
+                  Browse Articles
                 </button>
               </div>
 

@@ -86,9 +86,9 @@ const Icon = feature.icon;
   <Icon className="w-6 h-6 text-primary" />
 </div>
       <h3 className="text-xl font-semibold mb-5">{feature.title}</h3>
-      <ul className="space-y-2 font-mono">
+      <ul className="space-y-2 ">
   {feature.description.map((item) => (
-    <li key={item} className="flex items-center gap-2">
+    <li key={item} className="flex items-center text-muted-foreground gap-2">
       <span className="text-primary">▸</span>
       {item}
     </li>

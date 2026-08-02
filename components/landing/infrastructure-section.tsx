@@ -6,6 +6,7 @@ import {
   MessageCircleQuestion,
   Compass,
   BookOpen,
+  FileText,
   type LucideIcon
 } from "lucide-react";
 
@@ -113,8 +114,9 @@ return (
     <a
       href="/Rayan-Alrashed-CV.pdf"
       download
-      className="mt-auto flex w-full items-center justify-center rounded-lg bg-foreground/5 border border-border px-6 py-9 text-md text-muted-foreground font-medium font-mono transition-all hover:border-primary hover:text-primary"
+      className="mt-auto flex w-full items-center justify-center gap-4 rounded-lg bg-foreground/5 border border-border px-6 py-9 text-md text-foreground font-medium font-mono transition-all hover:border-primary hover:text-primary"
     >
+      <FileText className="h-5 w-5" />
       Download CV
     </a>
             </div>
