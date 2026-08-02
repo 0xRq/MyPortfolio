@@ -65,7 +65,7 @@ export function Navigation() {
               size="sm"
               className="bg-foreground hover:bg-foreground/90 text-background cursor-pointer"
             >
-              Let's Connect
+              View CV
             </Button>
           </div>
 

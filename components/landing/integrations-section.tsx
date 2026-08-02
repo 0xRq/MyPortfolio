@@ -5,54 +5,19 @@ import { AsciiCube } from "./ascii-cube";
 
 const integrations = [
   { 
-    name: "Slack", 
-    category: "Communication",
-    ascii: `  ┌─┐
-  │#│
-  └─┘`
+    name: "Home Cybersecurity Lab",
+    category: "Created & configured a self-hosted environment for learning, testing, and experimenting with offensive security tools.",
+    skills: ["Proxmox", "Docker", "Linux"]
   },
   { 
-    name: "GitHub", 
-    category: "Development",
-    ascii: `  ╔═╗
-  ║<║
-  ╚═╝`
+    name: "SSH Honeypot",
+    category: "Deployed an SSH honeypot to observe automated attacks, collect login attempts, and analyze attacker behavior.",
+    skills: ["Cowrie", "SSH", "Log Analysis"]
   },
   { 
-    name: "Stripe", 
-    category: "Payments",
-    ascii: `  ┌$┐
-  └─┘`
-  },
-  { 
-    name: "PostgreSQL", 
-    category: "Database",
-    ascii: `  [█]
-  [█]`
-  },
-  { 
-    name: "Redis", 
-    category: "Cache",
-    ascii: `  ◈◈
-  ◈◈`
-  },
-  { 
-    name: "AWS", 
-    category: "Cloud",
-    ascii: `  ≋≋
-  ≋≋`
-  },
-  { 
-    name: "MongoDB", 
-    category: "Database",
-    ascii: `  {M}
-  ---`
-  },
-  { 
-    name: "Vercel", 
-    category: "Hosting",
-    ascii: `  ▲
-  ─`
+    name: "Autonomous Parking System", 
+    category: "Built an Arduino-powered parking assistant using distance sensors to provide real-time vehicle guidance.",
+    skills: ["C++", "Arduino", "Electronics"]
   },
 ];
 
@@ -86,9 +51,9 @@ export function IntegrationsSection() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <p className="text-sm font-mono text-primary mb-4">// INTEGRATION ECOSYSTEM</p>
+          <p className="text-sm font-mono text-primary mb-4">// PROJECTS</p>
           <h2 className="text-4xl lg:text-5xl font-semibold tracking-tight mb-6 text-balance">
-            Connect everything.<br />Build anything.
+            My Projects
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
             Pre-built integrations with your favorite tools. No complex setup, 
@@ -97,7 +62,7 @@ export function IntegrationsSection() {
         </div>
 
         {/* Integrations Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {integrations.map((integration, index) => (
             <div
               key={integration.name}
@@ -106,20 +71,22 @@ export function IntegrationsSection() {
               }`}
               style={{ transitionDelay: `${index * 50}ms` }}
             >
-              {/* ASCII Icon */}
-              <pre className="font-mono text-lg text-primary mb-4 leading-tight h-12 flex items-center justify-center">
-                {integration.ascii}
-              </pre>
               
-              <div className="text-center">
-                <h3 className="font-semibold mb-1">{integration.name}</h3>
-                <p className="text-xs text-muted-foreground">{integration.category}</p>
+              <div className="">
+                <h3 className="text-lg font-semibold mb-1">{integration.name}</h3>
+                <p className="text-md text-muted-foreground">{integration.category}</p>
               </div>
 
-              {/* Hover indicator */}
-              <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                <span className="text-primary font-mono text-xs">→</span>
-              </div>
+              <div className="mt-4 flex flex-wrap gap-2">
+    {integration.skills.map((skill) => (
+      <span
+        key={skill}
+        className="rounded-full border border-border bg-muted/30 px-2.5 py-1 text-xs font-medium text-muted-foreground transition-colors "
+      >
+        {skill}
+      </span>
+    ))}
+  </div>
             </div>
           ))}
         </div>

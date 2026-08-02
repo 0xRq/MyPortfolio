@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import { AsciiWave } from "./ascii-wave";
+import { Google_Sans_Code } from "next/font/google";
 
 function AnimatedCounter({ end, suffix = "", prefix = "" }: { end: number; suffix?: string; prefix?: string }) {
   const [count, setCount] = useState(0);
@@ -45,30 +46,54 @@ function AnimatedCounter({ end, suffix = "", prefix = "" }: { end: number; suffi
   );
 }
 
-const metrics = [
-  { 
-    value: 309890, 
-    suffix: "", 
-    label: "API calls today",
-    sublabel: "+12.4% from yesterday"
+const certifications = [
+   {
+    logo: "./Google_logo.svg",
+    issuer: "Google",
+    title: "Google Cybersecurity Professional Certificate",
+    credential: "9-course Professional Certificate",
+    button: "Verify Credential",
+    href: "https://..."
   },
-  { 
-    value: 99, 
-    suffix: ".98%", 
-    label: "Uptime this month",
-    sublabel: "SLA guaranteed"
+  {
+    logo: "./Tuwaiq_Academy.svg",
+    issuer: "Tuwaiq Academy",
+    title: "SOC Level 1 Bootcamp",
+    credential: "Security Operations Center",
+    button: "View Certificate",
+    href: "https://..."
   },
-  { 
-    value: 47, 
-    suffix: "ms", 
-    label: "Average latency",
-    sublabel: "p99 globally"
+  {
+    logo: "./STC-logo.svg",
+    issuer: "Tuwaiq Academy",
+    title: "Penetration Testing Bootcamp",
+    credential: "6-week intensive training",
+    button: "View Certificate",
+    href: "https://..."
   },
-  { 
-    value: 184, 
-    suffix: "", 
-    label: "Countries served",
-    sublabel: "Edge network"
+  {
+    logo: "./CC_Logo.png",
+    issuer: "Stanford Online",
+    title: "Writing in the Sciences",
+    credential: "Stanford University",
+    button: "Verify Certificate",
+    href: "https://..."
+  },
+  {
+    logo: "./Udemy_logo.svg",
+    issuer: "Google",
+    title: "AI Essentials",
+    credential: "Generative AI Fundamentals",
+    button: "Verify Credential",
+    href: "https://..."
+  },
+  {
+    logo: "./Udemy_logo.svg",
+    issuer: "Udemy",
+    title: "Social Engineering & Ethical Hacking",
+    credential: "Professional Development",
+    button: "View Certificate",
+    href: "https://..."
   },
 ];
 
@@ -91,9 +116,9 @@ export function MetricsSection() {
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">
           <div>
-            <p className="text-sm font-mono text-primary mb-3">// LIVE METRICS</p>
+            <p className="text-sm font-mono text-primary mb-3">// CERTIFICATIONS</p>
             <h2 className="text-3xl lg:text-5xl font-semibold tracking-tight text-balance">
-              Real-time infrastructure<br />performance.
+              My Certifications
             </h2>
           </div>
           <div className="flex items-center gap-3 font-mono text-sm text-muted-foreground">
@@ -104,26 +129,50 @@ export function MetricsSection() {
           </div>
         </div>
         
-        {/* Metrics Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-border rounded-xl overflow-hidden card-shadow">
-          {metrics.map((metric) => (
-            <div
-              key={metric.label}
-              className="bg-card p-8 flex flex-col gap-4"
-            >
-              <div className="text-primary">
-                <AnimatedCounter 
-                  end={typeof metric.value === 'number' ? metric.value : 0} 
-                  suffix={metric.suffix} 
-                />
-              </div>
-              <div>
-                <div className="text-foreground font-medium">{metric.label}</div>
-                <div className="text-sm text-muted-foreground">{metric.sublabel}</div>
-              </div>
-            </div>
-          ))}
+        {/* Certifications Grid */}
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  {certifications.map((cert) => (
+    <div
+      key={cert.title}
+      className="group bg-card border border-border rounded-xl p-8 flex flex-col justify-between card-shadow hover:border-primary/50 transition-all"
+    >
+      <div>
+        {/* Logo + Issuer */}
+        <div className="flex items-center gap-3 mb-5">
+          <img
+            src={cert.logo}
+            alt={cert.issuer}
+            className="h-6 w-6 object-contain"
+          />
+
+          <span className="text-sm font-mono text-primary">
+            {cert.issuer}
+          </span>
         </div>
+
+        {/* Certificate Title */}
+        <h3 className="text-xl font-semibold mb-2">
+          {cert.title}
+        </h3>
+
+        {/* Credential Info */}
+        <p className="text-sm text-muted-foreground">
+          {cert.credential}
+        </p>
+      </div>
+
+      {/* Verification Button */}
+      <a
+        href={cert.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-8 inline-flex items-center justify-center rounded-lg border border-border px-4 py-2 text-sm font-medium transition-colors hover:border-primary hover:text-primary"
+      >
+        {cert.button}
+      </a>
+    </div>
+  ))}
+</div>
         
         {/* Live Activity Feed */}
         <div className="mt-12 p-6 rounded-xl bg-card border border-border card-shadow">
