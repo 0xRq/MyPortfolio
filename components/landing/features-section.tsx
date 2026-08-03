@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import { AsciiCube } from "./ascii-cube";
 import {
-  ShieldPlus,
+  Shield,
   Wrench,
   CodeXml,
 } from "lucide-react";
@@ -12,7 +12,7 @@ import {
 const features = [
   {
     title: "Cybersecurity",
-    icon: ShieldPlus,
+    icon: Shield,
     description: [
       "Penetration Testing",
       "Web Application Security",
@@ -138,7 +138,7 @@ export function FeaturesSection() {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
-              A growing arsenal of technologies, frameworks, and security tools that power my work.
+              The growing arsenal of technologies, frameworks, and security tools that power my work. 
             </p>
           </div>
           
