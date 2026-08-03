@@ -77,6 +77,9 @@ export function HowItWorksSection() {
             <span className="text-balance">How I Work</span>
         
           </h2>
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            How I approach every security assessment from reconnaissance to remediation.
+          </p>
         </div>
 
         {/* Main content */}

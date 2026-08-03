@@ -56,8 +56,7 @@ export function IntegrationsSection() {
             My Projects
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Pre-built integrations with your favorite tools. No complex setup, 
-            just plug and play with our extensive API library.
+            A showcase of the projects that taught me the most—not just the ones that worked.
           </p>
         </div>
 
@@ -104,26 +103,20 @@ export function IntegrationsSection() {
                   Check Out My Blog
                 </h3>
                 <p className="text-muted-foreground mb-6">
-                  A collection of writeups covering penetration testing, home lab projects, networking, and software development.
+                  A collection of writeups covering penetration testing, home lab projects, networking, and much more exciting stuff.
                 </p>
                 <button className="px-6 py-3 bg-foreground text-background rounded-lg font-medium hover:bg-foreground/90 transition-colors cursor-pointer">
                   Browse Articles
                 </button>
               </div>
 
-              <div className="font-mono text-xs text-muted-foreground space-y-2 bg-background/50 rounded-lg p-6 border border-border">
-                <div className="text-primary mb-2">// Example: Send notification</div>
-                <div>
-                  <span className="text-purple-400">const</span> response = <span className="text-blue-400">await</span> nexus.send({'{'}
-                </div>
-                <div className="pl-4">
-                  <span className="text-green-400">channel</span>: <span className="text-yellow-400">&quot;#general&quot;</span>,
-                </div>
-                <div className="pl-4">
-                  <span className="text-green-400">message</span>: <span className="text-yellow-400">&quot;AI inference complete&quot;</span>
-                </div>
-                <div>{'}'});</div>
-              </div>
+              <div className="rounded-lg overflow-hidden border border-border bg-background/50">
+  <img
+    src="./blog.png"
+    alt="Preview of my technical blog"
+    className="w-full h-full object-cover"
+  />
+</div>
             </div>
           </div>
 

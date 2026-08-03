@@ -138,8 +138,7 @@ export function FeaturesSection() {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
-              A complete platform for building, deploying, and scaling AI applications. 
-              From prototype to production in minutes, not months.
+              A growing arsenal of technologies, frameworks, and security tools that power my work.
             </p>
           </div>
           

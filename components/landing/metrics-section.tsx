@@ -117,13 +117,17 @@ export function MetricsSection() {
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">
           <div>
             <p className="text-sm font-mono text-primary mb-3">// CERTIFICATIONS</p>
-            <h2 className="text-3xl lg:text-5xl font-semibold tracking-tight text-balance">
+            <h2 className="mb-6 text-3xl lg:text-5xl font-semibold tracking-tight text-balance">
              Certifications & Courses
             </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+            A collection of industry-recognized certifications and specialized training in <br></br>
+            cybersecurity.
+          </p>
           </div>
           <div className="flex items-center gap-3 font-mono text-sm text-muted-foreground">
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-            <span>All systems operational</span>
+            <span>All Certificates Up-to-date</span>
             <span className="text-border">|</span>
             <span>{time.toLocaleTimeString()}</span>
           </div>
