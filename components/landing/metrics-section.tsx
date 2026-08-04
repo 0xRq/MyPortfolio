@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AsciiWave } from "./ascii-wave";
 import { Google_Sans_Code } from "next/font/google";
 import { CtaSection } from "./cta-section";
@@ -101,14 +101,29 @@ const certifications = [
 
 export function MetricsSection() {
   const [time, setTime] = useState(new Date());
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const interval = setInterval(() => setTime(new Date()), 1000);
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setIsVisible(true);
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+
   return (
-    <section id="metrics" className="relative py-32 overflow-hidden">
+    <section id="metrics" className="relative py-32 overflow-hidden" ref={sectionRef}>
       {/* ASCII Wave Background */}
       <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
         <AsciiWave className="w-full h-full object-cover" />
@@ -119,13 +134,22 @@ export function MetricsSection() {
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">
           <div>
             <p className="text-sm font-mono text-primary mb-3">// CERTIFICATIONS</p>
-            <h2 className="mb-6 text-3xl lg:text-5xl font-semibold tracking-tight text-balance">
-             Certifications & Courses
-            </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-            A collection of industry-recognized certifications and specialized training in <br></br>
+            <h2
+            className={`text-3xl lg:text-5xl font-semibold tracking-tight mb-6 transition-all duration-700 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}
+          >
+            <span className="text-balance">Certifications & Courses</span>
+        
+          </h2>
+          <p
+              className={`text-lg text-muted-foreground leading-relaxed max-w-lg transition-all duration-700 delay-100 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+            >
+              A collection of industry-recognized certifications and specialized training in 
             cybersecurity.
-          </p>
+            </p>
           </div>
           <div className="flex items-center gap-3 font-mono text-sm text-muted-foreground">
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
@@ -165,6 +189,7 @@ export function MetricsSection() {
         <p className="text-sm text-muted-foreground">
           {cert.credential}
         </p>
+
       </div>
 
       {/* Verification Button */}
