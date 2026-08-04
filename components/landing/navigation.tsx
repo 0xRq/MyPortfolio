@@ -60,14 +60,21 @@ export function Navigation() {
           </div>
 
           {/* Desktop CTA */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-3 font-mono">
             
             <Button
-              size="sm"
-              className="bg-foreground hover:bg-foreground/90 text-background cursor-pointer"
-            >
-              Download CV
-            </Button>
+  asChild
+  size="sm"
+  className="bg-foreground hover:bg-foreground/90 text-background cursor-pointer"
+>
+  <a
+    href="/MyResume.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Download CV
+  </a>
+</Button>
           </div>
 
           {/* Mobile Menu Button */}

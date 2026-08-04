@@ -158,8 +158,9 @@ export function CtaSection() {
     className="w-full h-25 justify-between border-border hover:border-primary/50 bg-card"
   >
     <a
-      href="/Rayan-Alrashed-CV.pdf"
-      download
+      href="/MyResume.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
     >
       <div className="flex items-center gap-3">
         <FileText
