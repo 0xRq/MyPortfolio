@@ -119,15 +119,21 @@ export function CtaSection() {
   >
     <a href="mailto:rayanalrashed8@email.com">
       <div className="flex items-center gap-3">
-        <Mail className="w-7 h-7 lg:w-10 lg:h-10 text-primary ml-2" />
-        <div className="text-left ml-2">
-          <p className="font-medium text-lg">Email Me</p>
-          <p className="text-md text-muted-foreground">
+        <Mail 
+        width={undefined}
+        height={undefined}
+        className="text-primary ml-2 w-6! h-6!" 
+         />
+        <div className="text-left lg:ml-2">
+          <p className="font-medium lg:text-lg">Email Me</p>
+          <p className="text-sm lg:text-md text-muted-foreground">
             rayanalrashed8@gmail.com
           </p>
         </div>
       </div>
-      <ArrowUpRight className="w-4 h-4" />
+      <ArrowUpRight 
+        className="w-5 h-5 mr-2" 
+       />
     </a>
   </Button>
 
@@ -141,15 +147,19 @@ export function CtaSection() {
       download
     >
       <div className="flex items-center gap-3">
-        <FileText className="w-7 h-7 lg:w-10 lg:h-10 text-primary ml-2" />
-        <div className="text-left ml-2">
-          <p className="font-medium text-lg">Download CV</p>
-          <p className="text-sm text-muted-foreground">
-            View my experience & certifications
+        <FileText
+        width={undefined}
+        height={undefined}
+        className="text-primary ml-2 w-6! h-6!" 
+         />
+        <div className="text-left lg:ml-2">
+          <p className="font-medium lg:text-lg">Download CV</p>
+          <p className="text-sm lg:text-md text-muted-foreground">
+            View my experience & more
           </p>
         </div>
       </div>
-      <ArrowDownToLine className="w-4 h-4" />
+      <ArrowDownToLine className="w-4 h-4 mr-2" />
     </a>
   </Button>
 </div>
