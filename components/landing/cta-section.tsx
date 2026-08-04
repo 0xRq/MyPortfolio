@@ -2,10 +2,15 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import GridBackground from "./grid-bg";
-
+import {
+  ArrowRight,
+  ArrowUpRight,
+  ArrowDownToLine,
+  Mail,
+  FileText,
+} from "lucide-react";
 
 
 export function CtaSection() {
@@ -37,10 +42,8 @@ export function CtaSection() {
           <div className="absolute inset-0 grid-pattern opacity-10" />
           
            {/* Animated Grid */}
-          <div className="absolute inset-0 opacity-90 pointer-events-none overflow-hidden">
-            <GridBackground />
-          </div>
-          <div className="relative z-10 px-8 lg:px-16 py-10 bg-transparent ">
+          
+          <div className="relative z-10 px-8 lg:px-16 py-16 bg-transparent ">
             <div className="flex items-center justify-between gap-8">
               <div className="max-w-2xl">
                 <h2 className="text-3xl lg:text-5xl font-semibold tracking-tight mb-4 text-foreground text-balance">
@@ -51,7 +54,9 @@ export function CtaSection() {
                   Interested in internships, research, technical discussions, or collaborative projects that challenge me to learn and improve.
                 </p>
 
-                <div className="flex flex-col sm:flex-row items-start gap-4">
+
+
+                <div className="flex flex-col sm:flex-row items-start gap-6">
                   
                   <Button
   size="lg"
@@ -93,6 +98,8 @@ export function CtaSection() {
     </span>
   </Button>
 
+
+
                   
                 </div>
 
@@ -100,7 +107,48 @@ export function CtaSection() {
               </div>
               
               {/* Animated ASCII Sphere */}
-              
+              <div className="flex flex-col gap-6 lg:w-80">
+  <Button
+    asChild
+    variant="outline"
+    className="h-25 justify-between border-border hover:border-primary/50 bg-background/50"
+  >
+    <a href="mailto:rayanalrashed8@email.com">
+      <div className="flex items-center gap-3">
+        <Mail className="w-12 h-12 text-primary ml-2" />
+        <div className="text-left ml-2">
+          <p className="font-medium text-lg">Email Me</p>
+          <p className="text-md text-muted-foreground">
+            rayanalrashed8@gmail.com
+          </p>
+        </div>
+      </div>
+      <ArrowUpRight className="w-4 h-4" />
+    </a>
+  </Button>
+
+  <Button
+    asChild
+    variant="outline"
+    className="h-25 justify-between border-border hover:border-primary/50 bg-background/50"
+  >
+    <a
+      href="/Rayan-Alrashed-CV.pdf"
+      download
+    >
+      <div className="flex items-center gap-3">
+        <FileText className="w-17 h-17 text-primary ml-2" />
+        <div className="text-left ml-2">
+          <p className="font-medium text-lg">Download CV</p>
+          <p className="text-sm text-muted-foreground">
+            View my experience & certifications
+          </p>
+        </div>
+      </div>
+      <ArrowDownToLine className="w-4 h-4" />
+    </a>
+  </Button>
+</div>
             </div>
           </div>
         </div>
