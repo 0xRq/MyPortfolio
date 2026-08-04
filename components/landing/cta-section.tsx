@@ -44,7 +44,7 @@ export function CtaSection() {
            {/* Animated Grid */}
           
           <div className="relative z-10 px-8 lg:px-16 py-16 bg-transparent ">
-            <div className="flex items-center justify-between gap-8">
+            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
               <div className="max-w-2xl">
                 <h2 className="text-3xl lg:text-5xl font-semibold tracking-tight mb-4 text-foreground text-balance">
                   Let's Connect 
@@ -56,7 +56,7 @@ export function CtaSection() {
 
 
 
-                <div className="flex flex-col sm:flex-row items-start gap-6">
+                <div className="flex flex-col sm:flex-row items-start gap-6 ">
                   
                   <Button
   size="lg"
@@ -107,15 +107,15 @@ export function CtaSection() {
               </div>
               
               {/* Animated ASCII Sphere */}
-              <div className="flex flex-col gap-6 lg:w-80">
+              <div className="flex flex-col gap-6 pt-6 lg:w-80">
   <Button
     asChild
     variant="outline"
-    className="h-25 justify-between border-border hover:border-primary/50 bg-background/50"
+    className="h-18 lg:h-24 justify-between border-border hover:border-primary/50 bg-background/50"
   >
     <a href="mailto:rayanalrashed8@email.com">
       <div className="flex items-center gap-3">
-        <Mail className="w-12 h-12 text-primary ml-2" />
+        <Mail className="w-7 h-7 lg:w-10 lg:h-10 text-primary ml-2" />
         <div className="text-left ml-2">
           <p className="font-medium text-lg">Email Me</p>
           <p className="text-md text-muted-foreground">
@@ -130,14 +130,14 @@ export function CtaSection() {
   <Button
     asChild
     variant="outline"
-    className="h-25 justify-between border-border hover:border-primary/50 bg-background/50"
+    className="h-18 lg:h-24 justify-between border-border hover:border-primary/50 bg-background/50"
   >
     <a
       href="/Rayan-Alrashed-CV.pdf"
       download
     >
       <div className="flex items-center gap-3">
-        <FileText className="w-17 h-17 text-primary ml-2" />
+        <FileText className="w-7 h-7 lg:w-10 lg:h-10 text-primary ml-2" />
         <div className="text-left ml-2">
           <p className="font-medium text-lg">Download CV</p>
           <p className="text-sm text-muted-foreground">
