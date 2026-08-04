@@ -55,7 +55,7 @@ const certifications = [
     title: "Google Cybersecurity Professional Certificate",
     credential: "9-course program covering cybersecurity fundamentals, Linux, SQL, Python, SIEM, and security operations",
     button: "Verify Credential",
-    href: "https://..."
+    href: "https://www.credly.com/badges/c1b46b19-d6a8-4c40-a1a3-dde0dbcd0f55/public_url"
   },
   {
     logo: "./Tuwaiq_Academy.svg",
@@ -63,7 +63,7 @@ const certifications = [
     title: "Penetration Testing Bootcamp",
     credential: "6-week intensive training focused on reconnaissance, vulnerability assessment, exploitation, and reporting",
     button: "View Certificate",
-    href: "https://..."
+    href: "./Tuwaiq_Cert2.pdf"
   },
   {
     logo: "./STC-logo.svg",
@@ -71,7 +71,7 @@ const certifications = [
     title: "Incident Response Internship",
     credential: "Virtual internship focused on security operations, incident handling, and cybersecurity workflows",
     button: "View Certificate",
-    href: "https://..."
+    href: "./STC Incident Response Internship.pdf"
   },
   {
     logo: "./Clifford_Chance.svg.webp",
@@ -79,7 +79,7 @@ const certifications = [
     title: "Cybersecurity Analyst Intern",
     credential: "Applied experience in security analysis, threat investigation, and cybersecurity research",
     button: "Verify Certificate",
-    href: "https://..."
+    href: "./CCinternship.pdf"
   },
   {
     logo: "./Udemy_logo.svg",
@@ -87,7 +87,7 @@ const certifications = [
     title: "Ethical Hacking",
     credential: "Training covering penetration testing methodologies, security tools, and techniques",
     button: "Verify Certificate",
-    href: "https://..."
+    href: "./ethicalHack.pdf"
   },
   {
     logo: "./Udemy_logo.svg",
@@ -95,7 +95,7 @@ const certifications = [
     title: "Social Engineering",
     credential: "Professional training focused on human-based security risks and social engineering techniques",
     button: "View Certificate",
-    href: "https://..."
+    href: "./SocialEng.pdf"
   },
 ];
 
