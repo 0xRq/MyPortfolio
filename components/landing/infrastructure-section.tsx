@@ -61,6 +61,7 @@ return (
   <section
     ref={sectionRef}
     className="relative py-32 bg-muted/30 overflow-hidden"
+    id="AboutMe"
   >
     {/* ASCII DNA Background */}
     <div className="absolute right-0 top-1/2 -translate-y-1/2 opacity-10 pointer-events-none">

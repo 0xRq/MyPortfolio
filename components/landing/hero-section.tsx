@@ -69,10 +69,12 @@ export function HeroSection() {
     isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
   }`}
 >
-  <Button 
-    size="lg" 
-    className="cursor-pointer bg-foreground hover:bg-foreground/90 text-background rounded-none px-6 h-11 text-sm font-medium group"
-  >
+  <Button
+  asChild
+  size="lg"
+  className="cursor-pointer bg-foreground hover:bg-foreground/90 text-background rounded-none px-6 h-11 text-sm font-medium group font-mono"
+>
+  <a href="#projects">
     View my Projects
 
     <span className="relative ml-2 w-4 h-4 overflow-hidden">
@@ -101,14 +103,16 @@ export function HeroSection() {
         "
       />
     </span>
-  </Button>
+  </a>
+</Button>
 
           <Button 
+          asChild
             size="lg" 
             variant="outline" 
-            className="cursor-pointer rounded-none h-11 px-6 text-sm font-medium hover:bg-secondary/50 bg-transparent"
+            className="cursor-pointer rounded-none h-11 px-6 text-sm font-medium hover:bg-secondary/50 bg-transparent font-mono"
           >
-            Let's Connect
+            <a href="#contact">Let's Connect</a>
           </Button>
         </div>
         

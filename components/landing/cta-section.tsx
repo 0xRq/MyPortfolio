@@ -30,7 +30,7 @@ export function CtaSection() {
   }, []);
 
   return (
-  <section ref={sectionRef} className="relative py-12 overflow-hidden">
+  <section ref={sectionRef} className="relative py-12 overflow-hidden scroll-mt-30" id="contact">
     <div
       className={`relative rounded-2xl overflow-hidden p-[1px] transition-all duration-1000 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
@@ -46,7 +46,7 @@ export function CtaSection() {
           {/* Background with grid */}
           <div className="absolute inset-0 bg-card" />
 <div
-  className="absolute inset-0 opacity-[0.10] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_85%)]"
+  className="absolute inset-0 opacity-[0.07] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_85%)]"
   style={{
     backgroundImage:
       "linear-gradient(to right, var(--foreground) 1px, transparent 1px), linear-gradient(to bottom, var(--foreground) 1px, transparent 1px)",
@@ -148,7 +148,7 @@ export function CtaSection() {
   <Button
     asChild
     variant="outline"
-    className="w-full h-25 justify-between border-border hover:border-primary/50 bg-background/50"
+    className="w-full h-25 justify-between border-border hover:border-primary/50 bg-card"
   >
     <a
       href="/Rayan-Alrashed-CV.pdf"

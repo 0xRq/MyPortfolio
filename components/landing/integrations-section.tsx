@@ -38,7 +38,7 @@ export function IntegrationsSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-32 overflow-hidden">
+    <section ref={sectionRef} className="relative py-32 overflow-hidden" id="projects">
       {/* ASCII Cube Background */}
       <div className="absolute left-10 top-1/3 opacity-5 pointer-events-none hidden xl:block">
         <AsciiCube className="w-[400px] h-[350px]" />
