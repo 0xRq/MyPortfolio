@@ -32,19 +32,27 @@ export function CtaSection() {
   return (
   <section ref={sectionRef} className="relative py-12 overflow-hidden">
     <div
-  className={`relative rounded-2xl overflow-hidden p-[1px] transition-all duration-1000 ${
-    isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-  }`}
->
-  {/* Moving light */}
-  <div className="absolute inset-[-50%] animate-spin-slow bg-[conic-gradient(from_0deg,transparent_0deg,hsl(var(--primary))_40deg,transparent_80deg)]" />
+      className={`relative rounded-2xl overflow-hidden p-[1px] transition-all duration-1000 ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      }`}
+    >
+      {/* Moving light */}
+      <div className="absolute inset-0 rounded-2xl overflow-hidden">
+<div className="absolute -inset-[150%] animate-spin [animation-duration:4s] bg-[conic-gradient(from_0deg,transparent_0deg,var(--primary)_8deg,transparent_16deg)]" />    </div>
 
-  {/* Card */}
+
+  {/* Actual card */}
   <div className="relative rounded-2xl overflow-hidden bg-card">
           {/* Background with grid */}
           <div className="absolute inset-0 bg-card" />
-          <div className="absolute inset-0 grid-pattern opacity-10" />
-          
+<div
+  className="absolute inset-0 opacity-[0.10] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_85%)]"
+  style={{
+    backgroundImage:
+      "linear-gradient(to right, var(--foreground) 1px, transparent 1px), linear-gradient(to bottom, var(--foreground) 1px, transparent 1px)",
+    backgroundSize: "40px 40px",
+  }}
+/>          
            {/* Animated Grid */}
           
           <div className="relative z-10 px-8 lg:px-16 py-16 bg-transparent ">

@@ -219,35 +219,12 @@ font-family: var(--font-jetbrains);  }
 }
 
 
-@keyframes border-light {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+@theme {
+  --animate-border-spin: border-spin 6s linear infinite;
 }
 
-.animate-border-light {
-  background: conic-gradient(
-    from 0deg,
-    transparent 0deg,
-    transparent 320deg,
-    hsl(var(--primary)) 350deg,
-    transparent 360deg
-  );
-  animation: border-light 4s linear infinite;
-}
-
-@keyframes spin-slow {
-  from {
-    transform: rotate(0deg);
-  }
+@keyframes border-spin {
   to {
     transform: rotate(360deg);
   }
-}
-
-.animate-spin-slow {
-  animation: spin-slow 4s linear infinite;
 }
