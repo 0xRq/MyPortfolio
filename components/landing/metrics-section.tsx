@@ -3,6 +3,8 @@
 import { useEffect, useState, useRef } from "react";
 import { AsciiWave } from "./ascii-wave";
 import { Google_Sans_Code } from "next/font/google";
+import { CtaSection } from "./cta-section";
+
 
 function AnimatedCounter({ end, suffix = "", prefix = "" }: { end: number; suffix?: string; prefix?: string }) {
   const [count, setCount] = useState(0);
@@ -177,8 +179,10 @@ export function MetricsSection() {
     </div>
   ))}
 </div>
-        
-        
+        <div className="mt-12">
+        <CtaSection></CtaSection>
+
+        </div>
         
       </div>
     </section>
@@ -202,3 +206,7 @@ function ActivityLine({ time, event, region, status, latency }: {
     </div>
   );
 }
+
+
+
+

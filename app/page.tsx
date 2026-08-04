@@ -35,10 +35,13 @@ export default function Home() {
         <HowItWorksSection />
         <IntegrationsSection />
         <MetricsSection />
-        <SecuritySection />
-        <DevelopersSection />
-        <CtaSection />
         <FooterSection />
+
+        {/*
+       // <SecuritySection />
+        // <DevelopersSection />
+        */}
+
       </main>
     </>
   );

@@ -2,7 +2,11 @@
 
 import { useEffect, useRef } from "react";
 
-export function AsciiSphere() {
+interface AsciiSphereProps {
+  className?: string;
+}
+
+export function AsciiSphere({ className }: AsciiSphereProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number | null>(null);
 
@@ -97,7 +101,7 @@ export function AsciiSphere() {
   return (
     <canvas
       ref={canvasRef}
-      className="w-full h-full"
+      className={className ?? "w-full h-full"}
       style={{ minHeight: "300px" }}
     />
   );

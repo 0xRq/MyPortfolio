@@ -84,11 +84,10 @@ export function SecuritySection() {
         >
           <p className="text-sm font-mono text-primary mb-4">// ENTERPRISE SECURITY</p>
           <h2 className="text-4xl lg:text-5xl font-semibold tracking-tight mb-6 text-balance">
-            Security you can trust.
+            Open to New Opportunities
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Bank-level security with enterprise-grade compliance. Your data is protected 
-            by industry-leading encryption and access controls.
+            I'm always interested in internships, research, technical discussions, or collaborative projects that challenge me to learn and improve.
           </p>
         </div>
 

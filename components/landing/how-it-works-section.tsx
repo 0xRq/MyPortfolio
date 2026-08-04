@@ -77,9 +77,13 @@ export function HowItWorksSection() {
             <span className="text-balance">How I Work</span>
         
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            How I approach every security assessment from reconnaissance to remediation.
-          </p>
+          <p
+              className={`text-lg text-muted-foreground leading-relaxed max-w-lg transition-all duration-700 delay-100 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+            >
+              How I approach every security assessment from reconnaissance to remediation.
+            </p>
         </div>
 
         {/* Main content */}
