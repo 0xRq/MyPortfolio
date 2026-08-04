@@ -6,9 +6,10 @@ import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { name: "Home", href: "#" },
-  { name: "About Me", href: "#how-it-works" },
-  { name: "My Projects", href: "#metrics" },
-  { name: "Blogs", href: "#developers" },
+  { name: "About Me", href: "#AboutMe" },
+  { name: "My Skills", href: "#skillset" },
+  { name: "My Projects", href: "#projects" },
+  { name: "Contact Me", href: "#contact" },
 ];
 
 export function Navigation() {
@@ -65,7 +66,7 @@ export function Navigation() {
               size="sm"
               className="bg-foreground hover:bg-foreground/90 text-background cursor-pointer"
             >
-              View CV
+              Download CV
             </Button>
           </div>
 

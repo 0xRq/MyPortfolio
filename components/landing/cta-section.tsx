@@ -71,9 +71,15 @@ export function CtaSection() {
                 <div className="flex flex-col sm:flex-row items-start gap-6 ">
                   
                   <Button
-  size="lg"
-  className="bg-foreground hover:bg-foreground text-background px-6 h-12 text-sm font-medium group cursor-pointer border rounded-none"
+                  asChild
+                  size="lg"
+                  className="bg-foreground hover:bg-foreground text-background px-6 h-12 text-sm font-mono font-medium group cursor-pointer border rounded-none"
 >
+  <a
+  href="https://www.linkedin.com/in/rayan-mohammed-0a2193315/"
+  target="_blank"
+  rel="noopener noreferrer"
+  >
   <Image
     src="/LinkedIn_icon.svg"
     alt="LinkedIn"
@@ -86,28 +92,29 @@ export function CtaSection() {
       {/* Current arrow */}
       <ArrowRight
         className="
-          absolute inset-0
-          w-4 h-4
-          transition-transform
-          duration-500
-          ease-[cubic-bezier(.16,1,.3,1)]
-          group-hover:translate-x-full
+        absolute inset-0
+        w-4 h-4
+        transition-transform
+        duration-500
+        ease-[cubic-bezier(.16,1,.3,1)]
+        group-hover:translate-x-full
         "
       />
 
       {/* Incoming arrow */}
       <ArrowRight
         className="
-          absolute inset-0
-          w-4 h-4
-          -translate-x-full
-          transition-transform
-          duration-500
-          ease-[cubic-bezier(.16,1,.3,1)]
-          group-hover:translate-x-0
+        absolute inset-0
+        w-4 h-4
+        -translate-x-full
+        transition-transform
+        duration-500
+        ease-[cubic-bezier(.16,1,.3,1)]
+        group-hover:translate-x-0
         "
       />
     </span>
+       </a>
   </Button>
 
 

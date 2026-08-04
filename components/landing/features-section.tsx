@@ -116,7 +116,7 @@ export function FeaturesSection() {
 
   return (
     <section
-      id="features"
+      id="skillset"
       ref={sectionRef}
       className="relative py-32 overflow-hidden"
     >
