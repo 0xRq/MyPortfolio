@@ -23,28 +23,27 @@ export function CtaSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-12 overflow-hidden">
+    <section ref={sectionRef} className="relative py-12 overflow-hidden ">
       
         <div
-          className={`relative rounded-2xl overflow-hidden transition-all duration-1000 ${
+          className={`relative border border-border hover:border-primary rounded-2xl overflow-hidden transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
           {/* Background with grid */}
-          <div className="absolute inset-0 bg-foreground" />
+          <div className="absolute inset-0 bg-card" />
           <div className="absolute inset-0 grid-pattern opacity-10" />
           
           
           <div className="relative z-10 px-8 lg:px-16 py-10 bg-transparent ">
             <div className="flex items-center justify-between gap-8">
               <div className="max-w-2xl">
-                <h2 className="text-3xl lg:text-5xl font-semibold tracking-tight mb-4 text-background text-balance">
-                  Contact Me 
+                <h2 className="text-3xl lg:text-5xl font-semibold tracking-tight mb-4 text-foreground text-balance">
+                  Let's Connect 
                 </h2>
 
-                <p className="text-lg text-background/70 mb-8 leading-relaxed max-w-lg">
-                  Join thousands of teams shipping faster with Nexus. 
-                  Free to start, scales with you.
+                <p className="text-lg text-foreground/70 mb-8 leading-relaxed max-w-lg">
+                  Interested in internships, research, technical discussions, or collaborative projects that challenge me to learn and improve.
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-start gap-4">
@@ -58,7 +57,7 @@ export function CtaSection() {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="h-12 px-6 text-sm font-medium border-background/30 text-background hover:bg-background/10 bg-transparent"
+                    className="h-12 px-6 text-sm font-medium border-background/30 text-foreground hover:bg-background/10 bg-transparent"
                   >
                     Talk to sales
                   </Button>
