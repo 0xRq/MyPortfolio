@@ -30,13 +30,17 @@ export function CtaSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-12 overflow-hidden ">
-      
-        <div
-          className={`relative border border-border rounded-2xl overflow-hidden transition-all duration-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-        >
+  <section ref={sectionRef} className="relative py-12 overflow-hidden">
+    <div
+  className={`relative rounded-2xl overflow-hidden p-[1px] transition-all duration-1000 ${
+    isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+  }`}
+>
+  {/* Moving light */}
+  <div className="absolute inset-[-50%] animate-spin-slow bg-[conic-gradient(from_0deg,transparent_0deg,hsl(var(--primary))_40deg,transparent_80deg)]" />
+
+  {/* Card */}
+  <div className="relative rounded-2xl overflow-hidden bg-card">
           {/* Background with grid */}
           <div className="absolute inset-0 bg-card" />
           <div className="absolute inset-0 grid-pattern opacity-10" />
@@ -46,7 +50,7 @@ export function CtaSection() {
           <div className="relative z-10 px-8 lg:px-16 py-16 bg-transparent ">
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
               <div className="max-w-2xl">
-                <h2 className="text-3xl lg:text-5xl font-semibold tracking-tight mb-4 text-foreground text-balance">
+                <h2 className="text-4xl lg:text-5xl font-semibold tracking-tight mb-4 text-foreground text-balance">
                   Let's Connect 
                 </h2>
 
@@ -60,7 +64,7 @@ export function CtaSection() {
                   
                   <Button
   size="lg"
-  className="bg-foreground hover:bg-foreground text-background px-6 h-12 text-sm font-medium group cursor-pointer border border-border rounded-none"
+  className="bg-foreground hover:bg-foreground text-background px-6 h-12 text-sm font-medium group cursor-pointer border rounded-none"
 >
   <Image
     src="/LinkedIn_icon.svg"
@@ -107,11 +111,11 @@ export function CtaSection() {
               </div>
               
               {/* Animated ASCII Sphere */}
-              <div className="flex flex-col gap-6 pt-6 lg:w-80">
+              <div className="flex flex-col gap-6 w-full lg:w-[420px] mt-8 lg:mt-0">
   <Button
     asChild
     variant="outline"
-    className="h-18 lg:h-24 justify-between border-border hover:border-primary/50 bg-background/50"
+    className="w-full h-25 justify-between border-border hover:border-primary/50 bg-background/50"
   >
     <a href="mailto:rayanalrashed8@email.com">
       <div className="flex items-center gap-3">
@@ -130,7 +134,7 @@ export function CtaSection() {
   <Button
     asChild
     variant="outline"
-    className="h-18 lg:h-24 justify-between border-border hover:border-primary/50 bg-background/50"
+    className="w-full h-25 justify-between border-border hover:border-primary/50 bg-background/50"
   >
     <a
       href="/Rayan-Alrashed-CV.pdf"
@@ -152,6 +156,7 @@ export function CtaSection() {
             </div>
           </div>
         </div>
+     </div>
      
     </section>
   );
