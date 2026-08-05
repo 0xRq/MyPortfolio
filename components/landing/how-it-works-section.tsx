@@ -151,7 +151,7 @@ export function HowItWorksSection() {
 
               {/* Code content */}
               <div className="p-6 font-mono text-sm min-h-[200px]">
-                <pre className="text-muted-foreground">
+                <pre className="text-muted-foreground whitespace-pre-wrap break-words">
                   {steps[activeStep].code.split('\n').map((line, i) => (
                     <div 
                       key={`${activeStep}-${i}`} 

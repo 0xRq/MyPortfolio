@@ -3,9 +3,6 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { AsciiSphere } from "./ascii-sphere";
-import { AsciiWave } from "./ascii-wave";
-import { AsciiTorus } from "./ascii-torus"; // Added import for AsciiTorus
 import GridBackground from "./grid-bg";
 
 export function HeroSection() {
@@ -59,7 +56,7 @@ export function HeroSection() {
           >
             I'm{" "} 
             <span className="font-(--font-geist-pixel-line) text-primary font-semibold opacity-100" style={{ fontFamily: 'var(--font-geist-pixel-line), monospace' }}>
-              Rayan Alrashed</span>, and welcome to my portfolio. I'm a Computer Science student with a deep passion for cybersecurity, honing my skills through hands-on labs and personal projects.
+              Rayan Alrashed</span>, and welcome to my portfolio. I'm a Computer Science student with a passion for cybersecurity. But instead of telling you who I am, I'd rather show you through my work.
           </p>
         </div>
         

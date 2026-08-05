@@ -32,7 +32,7 @@ export function CtaSection() {
   return (
   <section ref={sectionRef} className="relative py-12 overflow-hidden scroll-mt-30 lg:scroll-mt-35" id="contact">
     <div
-      className={`relative rounded-2xl overflow-hidden p-[1px] transition-all duration-1000 ${
+      className={`relative rounded-2xl card-shadow overflow-hidden p-[1px] transition-all duration-1000 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
     >
@@ -42,7 +42,7 @@ export function CtaSection() {
 
 
   {/* Actual card */}
-  <div className="relative rounded-2xl overflow-hidden bg-card">
+  <div className="relative rounded-2xl overflow-hidden bg-card border border-border/60">
           {/* Background with grid */}
           <div className="absolute inset-0 bg-card" />
 <div

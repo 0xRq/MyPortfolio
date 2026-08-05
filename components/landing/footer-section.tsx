@@ -1,14 +1,14 @@
 "use client";
 
-import { Github, Twitter } from "lucide-react";
+import { Github, Instagram, Twitter, Linkedin } from "lucide-react";
 import { Terminal } from "lucide-react";
 
 const footerLinks = {
-  Product: [
-    { name: "Features", href: "#features" },
-    { name: "Technology", href: "#how-it-works" },
-    { name: "Metrics", href: "#metrics" },
-    { name: "Changelog", href: "#" },
+  Browse: [
+    { name: "Home", href: "#features" },
+    { name: "About Me", href: "#how-it-works" },
+    { name: "My Skills", href: "#metrics" },
+    { name: "My projects", href: "#" },
   ],
   Developers: [
     { name: "Documentation", href: "#" },
@@ -22,11 +22,6 @@ const footerLinks = {
     { name: "Careers", href: "#" },
     { name: "Contact", href: "#" },
   ],
-  Legal: [
-    { name: "Privacy", href: "#" },
-    { name: "Terms", href: "#" },
-    { name: "Security", href: "#" },
-  ],
 };
 
 export function FooterSection() {
@@ -39,28 +34,28 @@ export function FooterSection() {
             {/* Brand Column */}
             <div className="col-span-2">
               {/* Logo */}
-              <a href="#" className="flex items-center gap-2 mb-6">
+              <a href="#" className="flex items-center gap-2 mb-4">
                 <div className="w-8 h-8 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center">
                   <Terminal className="w-4 h-4 text-primary" />
                 </div>
-                <span className="font-semibold text-lg tracking-tight">nexus</span>
+                <span className="font-semibold text-lg tracking-tight">Rayan Alrashed</span>
               </a>
 
               <p className="text-sm text-muted-foreground leading-relaxed mb-6">
-                The complete platform to build, deploy, and scale AI-powered applications.
+                Computer Science Student • Cybersecurity
               </p>
 
               {/* Social Links */}
               <div className="flex gap-3">
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/rayan-mohammed-0a2193315/"
                   className="text-muted-foreground hover:text-foreground transition-colors"
-                  aria-label="Twitter"
+                  aria-label="LinkedIn"
                 >
-                  <Twitter className="w-5 h-5" />
+                  <Linkedin className="w-5 h-5" />
                 </a>
                 <a
-                  href="#"
+                  href="https://github.com/0xRq"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                   aria-label="GitHub"
                 >
@@ -72,7 +67,7 @@ export function FooterSection() {
             {/* Link Columns */}
             {Object.entries(footerLinks).map(([title, links]) => (
               <div key={title}>
-                <h3 className="text-sm font-medium mb-4">{title}</h3>
+                <h3 className="text-sm font-semibold mb-4">{title}</h3>
                 <ul className="space-y-3">
                   {links.map((link) => (
                     <li key={link.name}>
@@ -93,13 +88,13 @@ export function FooterSection() {
         {/* Bottom Bar */}
         <div className="py-6 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            2025 Nexus. All rights reserved.
+            2025 Rayan Alrashed.
           </p>
 
           <div className="flex items-center gap-4 text-sm text-muted-foreground">
             <span className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
-              All systems operational
+              Designed, developed & continuously improved by Rayan.
             </span>
           </div>
         </div>
