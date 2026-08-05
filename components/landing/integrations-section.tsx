@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
-import { AsciiCube } from "./ascii-cube";
 
 const integrations = [
   { 
@@ -39,10 +38,7 @@ export function IntegrationsSection() {
 
   return (
     <section ref={sectionRef} className="relative py-32 overflow-hidden" id="projects">
-      {/* ASCII Cube Background */}
-      <div className="absolute left-10 top-1/3 opacity-5 pointer-events-none hidden xl:block">
-        <AsciiCube className="w-[400px] h-[350px]" />
-      </div>
+      
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}

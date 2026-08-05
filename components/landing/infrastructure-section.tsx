@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
-import { AsciiDna } from "./ascii-dna";
+
 import {
   MessageCircleQuestion,
   Compass,
@@ -63,11 +63,7 @@ return (
     className="relative py-32 bg-muted/30 overflow-hidden"
     id="AboutMe"
   >
-    {/* ASCII DNA Background */}
-    <div className="absolute right-0 top-1/2 -translate-y-1/2 opacity-10 pointer-events-none">
-      <AsciiDna className="w-[600px] h-[500px]" />
-    </div>
-
+    
     <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
       {/* Section Heading */}
       <div

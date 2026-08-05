@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState, useCallback } from "react";
-import { AsciiCube } from "./ascii-cube";
 import {
   Shield,
   Wrench,
@@ -72,7 +71,7 @@ const Icon = feature.icon;
   return (
     <div
       ref={cardRef}
-      className={`group relative rounded-xl p-8 card-shadow transition-all duration-700 hover:border-primary/50 bg-transparent border border-border/60 ${
+      className={`group relative rounded-xl p-8 card-shadow transition-all duration-700 hover:border-primary/50 bg-card border border-border/60 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
       style={{ transitionDelay: `${index * 100}ms` }}
@@ -120,6 +119,20 @@ export function FeaturesSection() {
       ref={sectionRef}
       className="relative py-32 overflow-hidden"
     >
+       {/* Background */}
+  <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+    <div className="absolute inset-0 bg-card" />
+  </div>
+
+  {/* Grid */}
+  <div
+    className="absolute inset-0 opacity-[0.07] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_85%)]"
+    style={{
+      backgroundImage:
+        "linear-gradient(to right, var(--foreground) 1px, transparent 1px), linear-gradient(to bottom, var(--foreground) 1px, transparent 1px)",
+      backgroundSize: "40px 40px",
+    }}
+  />
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header with ASCII cube */}
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
@@ -143,9 +156,7 @@ export function FeaturesSection() {
           </div>
           
           {/* ASCII Cube visualization */}
-          <div className="flex justify-center lg:justify-end">
-            <AsciiCube className="w-[480px] h-[640px]" />
-          </div>
+          
         </div>
 
         {/* Features Grid */}
