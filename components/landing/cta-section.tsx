@@ -30,7 +30,7 @@ export function CtaSection() {
   }, []);
 
   return (
-  <section ref={sectionRef} className="relative py-12 overflow-hidden scroll-mt-30" id="contact">
+  <section ref={sectionRef} className="relative py-12 overflow-hidden scroll-mt-30 lg:scroll-mt-35" id="contact">
     <div
       className={`relative rounded-2xl overflow-hidden p-[1px] transition-all duration-1000 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
