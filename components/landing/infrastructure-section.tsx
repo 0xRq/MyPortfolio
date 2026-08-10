@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
+import Image from "next/image";
 
 import {
   MessageCircleQuestion,
@@ -100,8 +101,7 @@ return (
                 , where I continue to build my foundation in programming & security concepts. I actively seek opportunities to expand my technical knowledge, strengthen my skills, and challenge myself through hands-on projects & practical experiences.
               </p>
 
-  <div className="h-px bg-border" />
-
+<br></br> <br></br>
 
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Throughout my journey, I have developed strong adaptability and a passion for continuous learning. I enjoy challenging myself with new concepts and finding creative solutions to complex problems. I have pursued professional certifications, including Google's Professional Cybersecurity Certificate and Google AI Essentials, while strengthening my skills through specialized Penetration Testing bootcamps & personal projects.
@@ -170,22 +170,36 @@ return (
 </div>
 
             {/* Stats */}
-            <div className="mt-9 p-6 rounded-lg bg-foreground/5 border border-border">
-              <div className="grid grid-cols-3 gap-4 text-center">
-                <div>
-                  <div className="font-mono text-2xl font-semibold text-primary">17</div>
-                  <div className="text-xs text-muted-foreground">Internships</div>
-                </div>
-                <div>
-                  <div className="font-mono text-2xl font-semibold text-primary">14</div>
-                  <div className="text-xs text-muted-foreground">Certificates</div>
-                </div>
-                <div>
-                  <div className="font-mono text-2xl font-semibold text-primary">6</div>
-                  <div className="text-xs text-muted-foreground">Projects</div>
-                </div>
-              </div>
-            </div>
+            {/* University */}
+<div className="mt-9 p-6 rounded-lg bg-foreground/5 border border-border">
+  <div className="flex items-center gap-5">
+    
+    {/* University Logo */}
+    <div className="flex-shrink-0">
+      <Image
+        src="/university-logo.png"
+        alt="University logo"
+        width={64}
+        height={64}
+        className="w-12 h-12 object-contain"
+      />
+    </div>
+
+    {/* University Info */}
+    <div className="text-left">
+      <p className="text-lg text-foreground mb-1">
+        B.C. in Computer Science
+      </p>
+      <h3 className="font-medium font-sans text-sm text-muted-foreground">
+        Imam Mohammad Ibn Saud Islamic University • 1st Year
+      </h3>
+
+
+      
+    </div>
+
+  </div>
+</div>
           </div>
         </div>
       </div>

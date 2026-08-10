@@ -42,7 +42,7 @@ export function FooterSection() {
               </a>
 
               <p className="text-sm text-muted-foreground leading-relaxed mb-6">
-                Computer Science Student • Cybersecurity
+                Imam Mohammed Bin Saud University - <br></br>Computer Science Student
               </p>
 
               {/* Social Links */}
