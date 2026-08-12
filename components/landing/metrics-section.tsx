@@ -100,14 +100,19 @@ const certifications = [
 ];
 
 export function MetricsSection() {
-  const [time, setTime] = useState(new Date());
+const [time, setTime] = useState<Date | null>(null);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const interval = setInterval(() => setTime(new Date()), 1000);
-    return () => clearInterval(interval);
-  }, []);
+  setTime(new Date());
+
+  const interval = setInterval(() => {
+    setTime(new Date());
+  }, 1000);
+
+  return () => clearInterval(interval);
+}, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -155,7 +160,7 @@ export function MetricsSection() {
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
             <span>All Certificates Up-to-date</span>
             <span className="text-border">|</span>
-            <span>{time.toLocaleTimeString()}</span>
+            <span>{time ? time.toLocaleTimeString() : "--:--:--"}</span>
           </div>
         </div>
         

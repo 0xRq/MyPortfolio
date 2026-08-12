@@ -1,23 +1,33 @@
 "use client";
 
-import { useMemo } from "react";
+import { useEffect, useState } from "react";
 
-const GRID_X = 192; // vertical line spacing
-const GRID_Y = 120; // horizontal line spacing
+const GRID_X = 192;
+const GRID_Y = 120;
 const SEGMENT = 160;
 
+type Signal = {
+  id: number;
+  horizontal: boolean;
+  line: number;
+  delay: number;
+  duration: number;
+};
+
 export default function GridBackground() {
-  const signals = useMemo(
-    () =>
-      Array.from({ length: 8 }).map((_, i) => ({
-        id: i,
-        horizontal: Math.random() > 0.5,
-        line: Math.floor(Math.random() * 18),
-        delay: Math.random() * 20,
-        duration: 4 + Math.random() * 2,
-      })),
-    []
-  );
+  const [signals, setSignals] = useState<Signal[]>([]);
+
+  useEffect(() => {
+    const generatedSignals = Array.from({ length: 8 }).map((_, i) => ({
+      id: i,
+      horizontal: Math.random() > 0.5,
+      line: Math.floor(Math.random() * 18),
+      delay: Math.random() * 20,
+      duration: 4 + Math.random() * 2,
+    }));
+
+    setSignals(generatedSignals);
+  }, []);
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">

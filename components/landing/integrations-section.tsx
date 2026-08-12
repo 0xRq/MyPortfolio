@@ -108,9 +108,9 @@ export function IntegrationsSection() {
 
               <div className="rounded-lg overflow-hidden border border-border bg-background/50">
   <img
-    src="./blog.png"
+    src="./medium.webp"
     alt="Preview of my technical blog"
-    className="w-full h-full object-cover"
+    className="w-full h-56 object-cover"
   />
 </div>
             </div>

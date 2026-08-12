@@ -109,8 +109,9 @@ return (
 
               {/* CV Download Button */}
     <a
-      href="/Rayan-Alrashed-CV.pdf"
-      download
+      href="/MyResume.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
       className="mt-auto flex w-full items-center justify-center gap-4 rounded-lg bg-foreground/5 border border-border px-6 py-9 text-md text-foreground font-medium font-mono transition-all hover:border-primary hover:text-primary"
     >
       <FileText className="h-5 w-5" />
@@ -177,7 +178,7 @@ return (
     {/* University Logo */}
     <div className="flex-shrink-0">
       <Image
-        src="/university-logo.png"
+        src="/university-logo.webp"
         alt="University logo"
         width={64}
         height={64}
@@ -188,7 +189,7 @@ return (
     {/* University Info */}
     <div className="text-left">
       <p className="text-lg text-foreground mb-1">
-        B.C. in Computer Science
+        B.S. in Computer Science
       </p>
       <h3 className="font-medium font-sans text-sm text-muted-foreground">
         Imam Mohammad Ibn Saud Islamic University • 1st Year
