@@ -24,13 +24,11 @@ const steps = [
     title: "Report & Remediation",
     description: "Document findings, explain risks, and provide recommendations to improve security posture.",
     code: `samsepi0l@kali:~$ cat security-report.md
-    
     # Vulnerability Report
 Finding: Broken Access Control
 
 Recommendation:
-- Implement proper authorization checks
-- Review access control policies`,
+- Implement proper authorization checks`,
   },
 ];
 

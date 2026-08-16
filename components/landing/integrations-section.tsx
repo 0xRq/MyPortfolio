@@ -1,6 +1,8 @@
 "use client";
 
+import { ArrowRight } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
+import { Button } from "../ui/button";
 
 const integrations = [
   { 
@@ -101,9 +103,42 @@ export function IntegrationsSection() {
                 <p className="text-muted-foreground mb-6">
                   A collection of writeups covering penetration testing, home lab projects, networking, and much more exciting stuff.
                 </p>
-                <button className="px-6 py-3 bg-foreground text-background rounded-lg font-medium hover:bg-foreground/90 transition-colors cursor-pointer">
-                  Browse Articles
-                </button>
+                <Button
+  asChild
+  size="lg"
+  className="cursor-pointer bg-foreground hover:bg-foreground/90 text-background rounded-none px-6 h-11 text-sm font-medium group font-mono"
+>
+  <a href="https://medium.com/@sepiol" target="_blank" rel="noopener noreferrer">
+    View my Blogs
+
+    <span className="relative ml-2 w-4 h-4 overflow-hidden">
+      {/* Current arrow */}
+      <ArrowRight
+        className="
+          absolute inset-0
+          w-4 h-4
+          transition-transform
+          duration-500
+          ease-[cubic-bezier(.16,1,.3,1)]
+          group-hover:translate-x-full
+        "
+      />
+
+      {/* Incoming arrow */}
+      <ArrowRight
+        className="
+          absolute inset-0
+          w-4 h-4
+          -translate-x-full
+          transition-transform
+          duration-500
+          ease-[cubic-bezier(.16,1,.3,1)]
+          group-hover:translate-x-0
+        "
+      />
+    </span>
+  </a>
+</Button>
               </div>
 
               <div className="rounded-lg overflow-hidden border border-border bg-background/50">

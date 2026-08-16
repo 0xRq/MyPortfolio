@@ -56,7 +56,7 @@ export function HeroSection() {
           >
             I'm{" "} 
             <span className="font-(--font-geist-pixel-line) text-primary font-semibold opacity-100" style={{ fontFamily: 'var(--font-geist-pixel-line), monospace' }}>
-              Rayan Alrashed</span>, and welcome to my portfolio. I'm a Computer Science student with a passion for cybersecurity. But instead of telling you who I am, I'd rather show you through my work.
+              Rayan Alrashed</span>, a passionate Computer Science student at Imam Mohammed Bin Saud Islamic University specializing in cybersecurity. Welcome to my portfolio.
           </p>
         </div>
         

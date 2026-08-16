@@ -8,20 +8,9 @@ const footerLinks = {
     { name: "Home", href: "#features" },
     { name: "About Me", href: "#how-it-works" },
     { name: "My Skills", href: "#metrics" },
-    { name: "My projects", href: "#" },
+    { name: "My Projects", href: "#" },
   ],
-  Developers: [
-    { name: "Documentation", href: "#" },
-    { name: "API Reference", href: "#" },
-    { name: "SDK", href: "#developers" },
-    { name: "Status", href: "#" },
-  ],
-  Company: [
-    { name: "About", href: "#" },
-    { name: "Blog", href: "#" },
-    { name: "Careers", href: "#" },
-    { name: "Contact", href: "#" },
-  ],
+  
 };
 
 export function FooterSection() {
@@ -41,8 +30,8 @@ export function FooterSection() {
                 <span className="font-semibold text-lg tracking-tight">Rayan Alrashed</span>
               </a>
 
-              <p className="text-sm text-muted-foreground leading-relaxed mb-6">
-                Imam Mohammed Bin Saud University - <br></br>Computer Science Student
+              <p className="text-sm text-muted-foreground font-mediumleading-relaxed mb-6">
+                rayanalrashed8@gmail.com <br></br>+966561401911
               </p>
 
               {/* Social Links */}
@@ -88,7 +77,7 @@ export function FooterSection() {
         {/* Bottom Bar */}
         <div className="py-6 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            2025 Rayan Alrashed.
+            2026 Rayan Alrashed.
           </p>
 
           <div className="flex items-center gap-4 text-sm text-muted-foreground">

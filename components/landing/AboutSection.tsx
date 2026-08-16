@@ -42,7 +42,7 @@ const regions: Region[] = [
   },
 ];
 
-export function InfrastructureSection() {
+export function AboutSection() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -82,29 +82,29 @@ return (
       </div>
 
       {/* Two-column layout */}
-      <div className="grid lg:grid-cols-2 gap-16 items-start">
+      <div className="grid lg:grid-cols-2 gap-16 items-start h-full flex flex-col">
         {/* Left */}
         <div
-          className={`h-full transition-all duration-700 ${
+          className={`h-full flex flex-col transition-all duration-700 ${
             isVisible
               ? "opacity-100 translate-x-0"
               : "opacity-0 -translate-x-8"
           }`}
         >
-          <div className="h-full pr-16 flex flex-col">
+          <div className="h-full pr-0 lg:pr-16 flex flex-col">
             <div className="space-y-7 flex flex-col h-full">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I'm <span className="text-primary">Rayan Alrashed</span>, a Saudi Arabian Computer Science student specializing in cybersecurity. I am currently pursuing my studies at{" "}
+                I'm <span className="text-primary">Rayan Alrashed</span>, a Saudi Arabian Computer Science student specializing in cybersecurity, currently in my first year at{" "}
                 <span className="font-semibold">
-                  Imam Mohammed Bin Saud University
+                  Imam Mohammed Bin Saud Islamic University
                 </span>
-                , where I continue to build my foundation in programming & security concepts. I actively seek opportunities to expand my technical knowledge, strengthen my skills, and challenge myself through hands-on projects & practical experiences.
+                , where I continue to build my foundation in programming & security concepts. I'm  interested in cybersecurity and understanding how systems work, how they can be exploited, and how they can be secured. My technical background includes programming, networking, and cybersecurity, which I've developed through hands-on projects and practical training.
               </p>
 
-<br></br> <br></br>
+<br></br> 
 
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Throughout my journey, I have developed strong adaptability and a passion for continuous learning. I enjoy challenging myself with new concepts and finding creative solutions to complex problems. I have pursued professional certifications, including Google's Professional Cybersecurity Certificate and Google AI Essentials, while strengthening my skills through specialized Penetration Testing bootcamps & personal projects.
+                Throughout my journey, I've pursued professional certifications including Google's Professional Cybersecurity Certificate, while further developing my skills through specialized penetration testing training. I completed a 120-hour Penetration Testing Bootcamp at Tuwaiq Academy, where I studied different attack methodologies, web attacks, and exploitation, and finished 1st in the final examination.
               </p>
 
               {/* CV Download Button */}
