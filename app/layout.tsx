@@ -61,9 +61,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={`${inter.variable} ${figtree.variable} ${jetbrainsMono.variable} ${GeistPixelLine.variable} ${ibmPlexMono.variable} font-sans antialiased`}>
-        <SmoothScroll>
+        
           {children}
-        </SmoothScroll>
+        
         <Analytics />
       </body>
     </html>
