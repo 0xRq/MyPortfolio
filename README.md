@@ -6,14 +6,12 @@ The portfolio showcases my cybersecurity projects, technical skills, certificati
 
 ## Features
 
-* Personal introduction and academic background
-* Cybersecurity skills and security tools
-* Penetration testing workflow
-* Home cybersecurity lab and SSH honeypot projects
-* Arduino autonomous parking system
-* Certifications and specialized cybersecurity training
-* Technical blog
-* CV and contact information
+* Responsive and modern portfolio design
+* Interactive user interface and animations
+* Personal background and experience
+* Projects and technical work
+* Skills and areas of expertise
+* Certifications and achievements
 
 ## Tech Stack
 
