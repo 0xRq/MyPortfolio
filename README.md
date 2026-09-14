@@ -28,7 +28,7 @@ The portfolio showcases my cybersecurity projects, technical skills, certificati
 Clone the repository:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/MyPortfolio.git
+git clone https://github.com/0xRq/MyPortfolio.git
 cd MyPortfolio
 ```
 
