@@ -21,6 +21,10 @@ The portfolio showcases my cybersecurity projects, technical skills, certificati
 * **Tailwind CSS**
 * **pnpm**
 
+## Live Website
+
+**[rayanalrashed.com](https://rayanalrashed.com)**
+
 ## Getting Started
 
 Clone the repository:
@@ -48,9 +52,6 @@ Open http://localhost:3000 to view the website locally.
 
 The website is deployed on Vercel and automatically redeployed when changes are pushed to the `main` branch.
 
-## Live Website
-
-**[rayanalrashed.com](https://rayanalrashed.com)**
 
 ## License
 
