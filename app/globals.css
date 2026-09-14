@@ -228,3 +228,14 @@ font-family: var(--font-jetbrains);  }
     transform: rotate(360deg);
   }
 }
+
+@keyframes subtleNode {
+  0%,
+  100% {
+    opacity: 0.08;
+  }
+
+  50% {
+    opacity: 0.18;
+  }
+}
