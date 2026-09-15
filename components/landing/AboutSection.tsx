@@ -82,99 +82,41 @@ return (
       </div>
 
       {/* Two-column layout */}
-      <div className="grid lg:grid-cols-2 gap-16 items-start h-full flex flex-col">
-        {/* Left */}
-        <div
-          className={`h-full flex flex-col transition-all duration-700 ${
-            isVisible
-              ? "opacity-100 translate-x-0"
-              : "opacity-0 -translate-x-8"
-          }`}
-        >
-          <div className="h-full pr-0 lg:pr-16 flex flex-col">
-            <div className="space-y-7 flex flex-col h-full">
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                I'm <span className="text-primary">Rayan Alrashed</span>, a Saudi Arabian Computer Science student specializing in cybersecurity, currently in my first year at{" "}
-                <span className="font-semibold">
-                  Imam Mohammed Bin Saud Islamic University
-                </span>
-                , where I continue to build my foundation in programming & security concepts. I'm  interested in cybersecurity and understanding how systems work, how they can be exploited, and how they can be secured. My technical background includes programming, networking, and cybersecurity, which I've developed through hands-on projects and practical training.
-              </p>
-
-<br></br> 
-
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Throughout my journey, I've pursued professional certifications including Google's Professional Cybersecurity Certificate, while further developing my skills through specialized penetration testing training. I completed a 120-hour Penetration Testing Bootcamp at Tuwaiq Academy, where I studied different attack methodologies, web attacks, and exploitation, and finished 1st in the final examination.
-              </p>
-
-              {/* CV Download Button */}
-    <a
-      href="/MyResume.pdf"
-    target="_blank"
-    rel="noopener noreferrer"
-      className="mt-auto flex w-full items-center justify-center gap-4 rounded-lg bg-foreground/5 border border-border px-6 py-9 text-md text-foreground font-medium font-mono transition-all hover:border-primary hover:text-primary"
-    >
-      <FileText className="h-5 w-5" />
-      Download CV
-    </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Right: Regions Grid */}
-        <div
-          className={`h-full flex flex-col transition-all duration-700 delay-200 ${
-            isVisible
-              ? "opacity-100 translate-x-0"
-              : "opacity-0 translate-x-8"
-          }`}
-        >
-          <div className="grid grid-cols-1 gap-3">
-  {regions.map((region, index) => {
-    const Icon = region.icon;
-
-    return (
-      <div
-        key={region.name}
-        className="group relative bg-card rounded-lg p-5 border border-border card-shadow hover:border-primary/50 transition-all duration-300"
-        style={{ transitionDelay: `${index * 50}ms` }}
-      >
-        <div className="flex items-center justify-between mb-2">
-          <div className="flex items-center gap-2">
-            <Icon className="w-5 h-5 mr-1 text-primary" />
-            <h2 className="font-semibold text-lg">{region.name}</h2>
-          </div>
-        </div>
-
-        <p className="mb-4 text-md text-muted-foreground leading-relaxed pr-16">
-          {region.description}
+<div className="grid lg:grid-cols-2 gap-16 items-start h-full">
+  {/* Left */}
+  <div
+    className={`h-full flex flex-col transition-all duration-700 ${
+      isVisible
+        ? "opacity-100 translate-x-0"
+        : "opacity-0 -translate-x-8"
+    }`}
+  >
+    <div className="h-full pr-0 lg:pr-16 flex flex-col">
+      <div className="space-y-7 flex flex-col h-full">
+        <p className="text-lg text-muted-foreground leading-relaxed">
+          I'm <span className="text-primary">Rayan Alrashed</span>, a Saudi
+          Arabian Computer Science student specializing in cybersecurity,
+          currently in my first year at{" "}
+          <span className="font-semibold">
+            Imam Mohammed Bin Saud Islamic University
+          </span>
+          , where I continue to build my foundation in programming & security
+          concepts. I'm interested in cybersecurity and understanding how
+          systems work, how they can be exploited, and how they can be secured.
         </p>
 
-        <div className="flex items-center gap-2">
-          <div className="flex gap-1">
-            {Array.from({ length: region.nodes }).map((_, i) => (
-              <span
-                key={i}
-                className="w-2 h-2 rounded-full bg-primary/70 animate-pulse"
-                style={{ animationDelay: `${i * 200}ms` }}
-              />
-            ))}
-          </div>
+        <p className="text-lg text-muted-foreground leading-relaxed">
+          I believe that education extends beyond the classroom, and I aim to
+          make the most of my time at university by continuously expanding my
+          knowledge and practical skills. Throughout my college journey, I plan
+          to pursue professional certifications, participate in student clubs,
+          and engage in hands-on projects that complement my academic studies.
+          
+        </p>
 
-          <span className="text-xs text-primary font-mono">
-            // {index + 1}
-          </span>
-        </div>
-      </div>
-    );
-  })}
-</div>
-
-            {/* Stats */}
-            {/* University */}
-<div className="mt-9 p-6 rounded-lg bg-foreground/5 border border-border">
+        {/* University Info */}
+<div className="mt-auto p-6 rounded-lg bg-foreground/5 border border-border">
   <div className="flex items-center gap-5">
-    
     {/* University Logo */}
     <div className="flex-shrink-0">
       <Image
@@ -194,15 +136,100 @@ return (
       <h3 className="font-medium font-sans text-sm text-muted-foreground">
         Imam Mohammad Ibn Saud Islamic University • 1st Year
       </h3>
-
-
-      
     </div>
-
   </div>
 </div>
+
+{/* Enjaz Role */}
+<div className="mt-0 p-6 rounded-lg bg-foreground/5 border border-border">
+  <div className="flex items-center gap-5">
+    {/* Enjaz Logo */}
+    <div className="flex-shrink-0">
+      <Image
+        src="/enjaz_logo.jpg"
+        alt="Enjaz logo"
+        width={64}
+        height={64}
+        className="w-12 h-12 object-contain"
+      />
+    </div>
+
+    {/* Enjaz Info */}
+    <div className="text-left">
+      <p className="text-lg text-foreground mb-1">
+        Cybersecurity Member
+      </p>
+      <h3 className="font-medium font-sans text-sm text-muted-foreground">
+        Enjaz • College of Computer and Information Sciences
+      </h3>
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+  </div>
+
+  {/* Right: Regions Grid */}
+  <div
+    className={`h-full flex flex-col transition-all duration-700 delay-200 ${
+      isVisible
+        ? "opacity-100 translate-x-0"
+        : "opacity-0 translate-x-8"
+    }`}
+  >
+    <div className="grid grid-cols-1 gap-3">
+      {regions.map((region, index) => {
+        const Icon = region.icon;
+
+        return (
+          <div
+            key={region.name}
+            className="group relative bg-card rounded-lg p-5 border border-border card-shadow hover:border-primary/50 transition-all duration-300"
+            style={{ transitionDelay: `${index * 50}ms` }}
+          >
+            <div className="flex items-center justify-between mb-2">
+              <div className="flex items-center gap-2">
+                <Icon className="w-5 h-5 mr-1 text-primary" />
+                <h2 className="font-semibold text-lg">{region.name}</h2>
+              </div>
+            </div>
+
+            <p className="mb-4 text-md text-muted-foreground leading-relaxed pr-16">
+              {region.description}
+            </p>
+
+            <div className="flex items-center gap-2">
+              <div className="flex gap-1">
+                {Array.from({ length: region.nodes }).map((_, i) => (
+                  <span
+                    key={i}
+                    className="w-2 h-2 rounded-full bg-primary/70 animate-pulse"
+                    style={{ animationDelay: `${i * 200}ms` }}
+                  />
+                ))}
+              </div>
+
+              <span className="text-xs text-primary font-mono">
+                // {index + 1}
+              </span>
+            </div>
           </div>
-        </div>
+        );
+      })}
+    </div>
+
+    {/* CV Download Button */}
+    <a
+      href="/MyResume.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="mt-9 flex w-full items-center justify-center gap-4 rounded-lg bg-foreground/5 border border-border px-6 py-9 text-md text-foreground font-medium font-mono transition-all hover:border-primary hover:text-primary"
+    >
+      <FileText className="h-5 w-5" />
+      Download CV
+    </a>
+  </div>
+</div>
       </div>
     </section>
   );

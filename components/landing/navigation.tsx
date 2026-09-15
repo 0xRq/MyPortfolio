@@ -109,12 +109,12 @@ export function Navigation() {
               </a>
             ))}
             <div className="flex flex-col gap-2 pt-4 mt-2 border-t border-border/50">
-              <Button variant="ghost" className="justify-start text-muted-foreground pointer-events-none">
-                Sign in
-              </Button>
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
-                Get Started
-              </Button>
+              
+              <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground">
+  <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">
+    View My CV
+  </a>
+</Button>
             </div>
           </div>
         </div>
