@@ -37,11 +37,11 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: '/RA-white.svg',
+        url: '/RA-white.png',
         media: '(prefers-color-scheme: light)',
       },
       {
-        url: '/RA-black.svg',
+        url: '/RA-black.png',
         media: '(prefers-color-scheme: dark)',
       },
       {

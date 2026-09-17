@@ -157,7 +157,7 @@ return (
     {/* Enjaz Info */}
     <div className="text-left">
       <p className="text-lg text-foreground mb-1">
-        Cybersecurity Member
+        Cybersecurity Club Member
       </p>
       <h3 className="font-medium font-sans text-sm text-muted-foreground">
         Enjaz • College of Computer and Information Sciences

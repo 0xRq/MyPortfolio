@@ -18,13 +18,16 @@ export default function GridBackground() {
   const [signals, setSignals] = useState<Signal[]>([]);
 
   useEffect(() => {
-    const generatedSignals = Array.from({ length: 8 }).map((_, i) => ({
-      id: i,
-      horizontal: Math.random() > 0.5,
-      line: Math.floor(Math.random() * 18),
-      delay: Math.random() * 20,
-      duration: 4 + Math.random() * 2,
-    }));
+    const generatedSignals = Array.from({ length: 8 }).map((_, i) => {
+  const duration = 4 + Math.random() * 2;
+  return {
+    id: i,
+    horizontal: Math.random() > 0.5,
+    line: Math.floor(Math.random() * 18),
+    delay: -(Math.random() * duration), // negative delay = start mid-animation
+    duration,
+  };
+});
 
     setSignals(generatedSignals);
   }, []);
