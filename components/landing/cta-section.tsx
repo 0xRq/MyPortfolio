@@ -63,7 +63,7 @@ export function CtaSection() {
                 </h2>
 
                 <p className="text-lg text-foreground/70 mb-8 leading-relaxed max-w-lg">
-                  Interested in internships, research, technical discussions, or collaborative projects that challenge me to learn and improve.
+                  Interested in internships, research, or collaborative projects that challenge me to learn and improve.
                 </p>
 
 
@@ -171,7 +171,7 @@ export function CtaSection() {
         <div className="text-left lg:ml-2">
           <p className="font-medium lg:text-lg">Download CV</p>
           <p className="text-sm lg:text-md text-muted-foreground">
-            View my experience & more
+            View experience & more
           </p>
         </div>
       </div>

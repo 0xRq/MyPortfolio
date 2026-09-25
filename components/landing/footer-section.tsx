@@ -83,7 +83,7 @@ export function FooterSection() {
           <div className="flex items-center gap-4 text-sm text-muted-foreground">
             <span className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
-              Designed, developed & continuously improved by Rayan.
+              Designed, developed & continuously improved by Sepi0l
             </span>
           </div>
         </div>

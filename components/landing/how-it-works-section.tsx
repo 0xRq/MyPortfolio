@@ -7,7 +7,14 @@ const steps = [
     number: "01",
     title: "Reconnaissance",
     description: "Analyze the target environment, gather intelligence, and identify potential attack surfaces.",
-    code: `samsepi0l@kali:~$ nmap -sV -sC target.com`,
+    code: `samsepi0l@kali:~$ nmap -sV -sC target.com
+Starting Nmap 7.95...
+Nmap scan report for target.com
+Host is up (0.021s latency).
+
+PORT    STATE SERVICE  VERSION
+80/tcp  open  http     nginx 1.24
+`,
   },
   {
     number: "02",
