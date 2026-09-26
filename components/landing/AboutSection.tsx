@@ -47,6 +47,15 @@ export function AboutSection() {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    const currentSection = sectionRef.current;
+
+    if (!currentSection) return;
+
+    if (typeof IntersectionObserver === "undefined") {
+      setIsVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) setIsVisible(true);
@@ -54,12 +63,12 @@ export function AboutSection() {
       { threshold: 0.2 }
     );
 
-    if (sectionRef.current) observer.observe(sectionRef.current);
+    observer.observe(currentSection);
     return () => observer.disconnect();
   }, []);
 
-return (
-  <section
+  return (
+    <section
     ref={sectionRef}
     className="relative py-32 bg-muted/30 overflow-hidden"
     id="AboutMe"
@@ -82,7 +91,7 @@ return (
       </div>
 
       {/* Two-column layout */}
-<div className="grid lg:grid-cols-2 gap-16 items-start h-full">
+<div className="grid lg:grid-cols-2 gap-16 items-stretch h-full">
   {/* Left */}
   <div
     className={`h-full flex flex-col transition-all duration-700 ${
@@ -93,7 +102,7 @@ return (
   >
     <div className="h-full pr-0 lg:pr-16 flex flex-col">
       <div className="space-y-7 flex flex-col h-full">
-        <p className="text-lg text-muted-foreground leading-relaxed">
+        <p className="text-md lg:text-lg text-muted-foreground leading-relaxed">
           I'm <span className="text-primary">Rayan Alrashed</span>, a Saudi
           Arabian Computer Science student specializing in cybersecurity,
           currently in my first year at{" "}
@@ -105,66 +114,62 @@ return (
           systems work, how they can be exploited, and how they can be secured.
         </p>
 
-        <p className="text-lg text-muted-foreground leading-relaxed">
+        <p className="text-md lg:text-lg text-muted-foreground leading-relaxed">
           I believe that education extends beyond the classroom, and I aim to
           make the most of my time at university by continuously expanding my
           knowledge and practical skills. Throughout my college journey, I plan
           to pursue professional certifications, participate in student clubs,
           and engage in hands-on projects that complement my academic studies.
-          
         </p>
 
-        {/* University Info */}
-<div className="mt-auto p-6 rounded-lg bg-foreground/5 border border-border">
-  <div className="flex items-center gap-5">
-    {/* University Logo */}
-    <div className="flex-shrink-0">
-      <Image
-        src="/university-logo.webp"
-        alt="University logo"
-        width={64}
-        height={64}
-        className="w-12 h-12 object-contain"
-      />
-    </div>
+        {/* University Info — pinned to bottom, matches CV button on the right */}
+        <div className="grid grid-cols-1 gap-4 mt-auto">
+          {/* University */}
+          <div className="h-[100px] p-5 rounded-lg bg-foreground/5 border border-border flex items-center">
+            <div className="flex items-center gap-6 justify-center w-full max-w-md mx-auto">
+              <div className="flex-shrink-0">
+                <Image
+                  src="/university-logo.webp"
+                  alt="University logo"
+                  width={64}
+                  height={64}
+                  className="w-16 h-16 object-contain"
+                />
+              </div>
+              <div className="text-left">
+                <p className="text-lg text-foreground mb-1">
+                  B.S. in Computer Science
+                </p>
+                <h3 className="font-medium font-sans text-sm text-muted-foreground">
+                  Imam Mohammad Ibn Saud Islamic University • 1st Year
+                </h3>
+              </div>
+            </div>
+          </div>
 
-    {/* University Info */}
-    <div className="text-left">
-      <p className="text-lg text-foreground mb-1">
-        B.S. in Computer Science
-      </p>
-      <h3 className="font-medium font-sans text-sm text-muted-foreground">
-        Imam Mohammad Ibn Saud Islamic University • 1st Year
-      </h3>
-    </div>
-  </div>
-</div>
-
-{/* Enjaz Role */}
-<div className="mt-0 p-6 rounded-lg bg-foreground/5 border border-border">
-  <div className="flex items-center gap-5">
-    {/* Enjaz Logo */}
-    <div className="flex-shrink-0">
-      <Image
-        src="/enjaz_logo.jpg"
-        alt="Enjaz logo"
-        width={64}
-        height={64}
-        className="w-12 h-12 object-contain"
-      />
-    </div>
-
-    {/* Enjaz Info */}
-    <div className="text-left">
-      <p className="text-lg text-foreground mb-1">
-        Cybersecurity Club Member
-      </p>
-      <h3 className="font-medium font-sans text-sm text-muted-foreground">
-        Enjaz • College of Computer and Information Sciences
-      </h3>
-    </div>
-  </div>
-</div>
+          {/* Enjaz */}
+          <div className="h-[100px] p-7 rounded-lg bg-foreground/5 border border-border flex sm:items-center">
+            <div className="flex items-center gap-6 justify-center w-full max-w-md mx-auto">
+              <div className="flex-shrink-0">
+                <Image
+                  src="/enjaz_logo.jpg"
+                  alt="Enjaz logo"
+                  width={64}
+                  height={64}
+                  className="w-14 h-14 object-contain"
+                />
+              </div>
+              <div className="text-left">
+                <p className="text-lg text-foreground mb-1">
+                  Cybersecurity Club Member
+                </p>
+                <h3 className="font-medium font-sans text-sm text-muted-foreground">
+                  Enjaz • College of Computer and Information Sciences
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -218,19 +223,19 @@ return (
       })}
     </div>
 
-    {/* CV Download Button */}
+    {/* CV Download Button — pinned to bottom, matches Enjaz card on the left */}
     <a
       href="/MyResume.pdf"
       target="_blank"
       rel="noopener noreferrer"
-      className="mt-9 flex w-full items-center justify-center gap-4 rounded-lg bg-foreground/5 border border-border px-6 py-9 text-md text-foreground font-medium font-mono transition-all hover:border-primary hover:text-primary"
+      className="mt-10 flex w-full items-center justify-center gap-4 rounded-lg bg-foreground/5 border border-border px-6 py-9 text-md text-foreground font-medium font-mono transition-all hover:border-primary hover:text-primary"
     >
       <FileText className="h-5 w-5" />
       Download CV
     </a>
   </div>
 </div>
-      </div>
-    </section>
+    </div>
+  </section>
   );
 }

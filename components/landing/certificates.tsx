@@ -142,7 +142,7 @@ const [time, setTime] = useState<Date | null>(null);
             
 
               <h2
-            className={`text-3xl lg:text-5xl font-semibold tracking-tight mb-6 transition-all duration-700 ${
+            className={`text-4xl lg:text-5xl font-semibold tracking-tight mb-6 transition-all duration-700 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
@@ -154,7 +154,7 @@ const [time, setTime] = useState<Date | null>(null);
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
-A collection of industry-recognized certifications and specialized training in 
+A collection of industry-recognized certifications & training in 
             cybersecurity.            </p>
 
           </div>

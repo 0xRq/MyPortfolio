@@ -6,7 +6,7 @@ const steps = [
   {
     number: "01",
     title: "Reconnaissance",
-    description: "Analyze the target environment, gather intelligence, and identify potential attack surfaces.",
+    description: "Analyze the target environment, gather intel, and identify potential attack surfaces.",
     code: `samsepi0l@kali:~$ nmap -sV -sC target.com
 Starting Nmap 7.95...
 Nmap scan report for target.com
@@ -27,7 +27,7 @@ PORT    STATE SERVICE  VERSION
   {
     number: "03",
     title: "Report & Remediation",
-    description: "Document findings, explain risks, and provide recommendations to improve security posture.",
+    description: "Document findings, explain risks, and offer recommendations to improve security posture.",
     code: `samsepi0l@kali:~$ cat security-report.md
     # Vulnerability Report
 Finding: Broken Access Control
@@ -73,7 +73,7 @@ export function HowItWorksSection() {
         <div className="mb-20">
           <p className="text-sm font-mono text-primary mb-3">// WORKFLOW</p>
           <h2
-            className={`text-3xl lg:text-5xl font-semibold tracking-tight mb-6 transition-all duration-700 ${
+            className={`text-4xl lg:text-5xl font-semibold tracking-tight mb-6 transition-all duration-700 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
@@ -95,47 +95,54 @@ export function HowItWorksSection() {
           <div className="space-y-2">
             {steps.map((step, index) => (
               <button
-                key={step.number}
-                type="button"
-                onClick={() => setActiveStep(index)}
-                className={`w-full text-left p-6 rounded-xl border transition-all duration-300 ${
-                  activeStep === index
-                    ? "bg-card border-primary/50 card-shadow"
-                    : "bg-transparent border-transparent hover:bg-card/50"
-                }`}
-              >
-                <div className="flex items-start gap-4">
-                  <span
-                    className={`font-mono text-sm transition-colors ${
-                      activeStep === index ? "text-primary" : "text-muted-foreground"
-                    }`}
-                  >
-                    {step.number}
-                  </span>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-semibold mb-1">{step.title}</h3>
-                    <p
-                      className={`text-sm leading-relaxed transition-colors ${
-                        activeStep === index ? "text-muted-foreground" : "text-muted-foreground/60"
-                      }`}
-                    >
-                      {step.description}
-                    </p>
-                  </div>
-                </div>
-                
-                {/* Progress bar */}
-                {activeStep === index && (
-                  <div className="mt-4 ml-8">
-                    <div className="h-0.5 bg-border rounded-full overflow-hidden">
-                      <div 
-                        className="h-full bg-primary rounded-full animate-[progress_4s_linear]"
-                        style={{ width: '100%' }}
-                      />
-                    </div>
-                  </div>
-                )}
-              </button>
+  key={step.number}
+  type="button"
+  onClick={() => setActiveStep(index)}
+  className={`w-full text-left p-6 rounded-xl border transition-all duration-300 ${
+    activeStep === index
+      ? "bg-card border-primary/50 card-shadow"
+      : "bg-transparent border-transparent hover:bg-card/50"
+  }`}
+>
+  <div className="flex items-start gap-4">
+    <span
+      className={`font-mono text-sm transition-colors ${
+        activeStep === index
+          ? "text-primary"
+          : "text-muted-foreground"
+      }`}
+    >
+      {step.number}
+    </span>
+
+    <div className="flex-1">
+      <h3 className="text-lg font-semibold mb-1">
+        {step.title}
+      </h3>
+
+      <p
+        className={`text-sm leading-relaxed transition-colors ${
+          activeStep === index
+            ? "text-muted-foreground"
+            : "text-muted-foreground/60"
+        }`}
+      >
+        {step.description}
+      </p>
+    </div>
+  </div>
+
+  {/* Always reserve progress-bar space */}
+  <div className="mt-4 ml-8 h-0.5 bg-border rounded-full overflow-hidden">
+    <div
+      className={`h-full bg-primary rounded-full ${
+        activeStep === index
+          ? "animate-[progress_4s_linear]"
+          : "w-0"
+      }`}
+    />
+  </div>
+</button>
             ))}
           </div>
 
@@ -153,7 +160,7 @@ export function HowItWorksSection() {
               </div>
 
               {/* Code content */}
-              <div className="p-6 font-mono text-sm min-h-[220px]">
+              <div className="p-6 font-mono text-sm min-h-[230px]">
                 <pre className="text-muted-foreground whitespace-pre-wrap break-words">
                   {steps[activeStep].code.split('\n').map((line, i) => (
                     <div 
@@ -278,51 +285,65 @@ function escapeHtml(s: string): string {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
-function highlightCode(line:string){
+function highlightCode(line: string) {
+  const headerMatch = line.match(
+    /^(\s*)(PORT)(\s+)(STATE)(\s+)(SERVICE)(\s+)(VERSION)(\s*)$/
+  );
 
-const tokens = tokenizeLine(line);
+  if (headerMatch) {
+    return (
+      headerMatch[1] +
+      `<span class="text-white font-bold">${headerMatch[2]}</span>` +
+      headerMatch[3] +
+      `<span class="text-white font-bold">${headerMatch[4]}</span>` +
+      headerMatch[5] +
+      `<span class="text-white font-bold">${headerMatch[6]}</span>` +
+      headerMatch[7] +
+      `<span class="text-white font-bold">${headerMatch[8]}</span>` +
+      headerMatch[9]
+    );
+  }
 
-return tokens.map(({type,value})=>{
+  const tokens = tokenizeLine(line);
 
-const escaped = escapeHtml(value);
+  return tokens
+    .map(({ type, value }) => {
+      const escaped = escapeHtml(value);
 
-switch(type){
+      switch (type) {
+        case "username":
+          return `<span class="text-green-400">${escaped}</span>`;
 
-case "username":
-return `<span class="text-green-400">${escaped}</span>`;
+        case "hostname":
+          return `<span class="text-cyan-400">${escaped}</span>`;
 
-case "hostname":
-return `<span class="text-cyan-400">${escaped}</span>`;
+        case "path":
+          return `<span class="text-blue-400">${escaped}</span>`;
 
-case "path":
-return `<span class="text-blue-400">${escaped}</span>`;
+        case "prompt":
+          return `<span class="text-foreground">${escaped}</span>`;
 
-case "prompt":
-return `<span class="text-foreground">${escaped}</span>`;
+        case "command":
+          return `<span class="text-white font-semibold">${escaped}</span>`;
 
-case "command":
-return `<span class="text-white font-semibold">${escaped}</span>`;
+        case "flag":
+          return `<span class="text-yellow-400">${escaped}</span>`;
 
-case "flag":
-return `<span class="text-yellow-400">${escaped}</span>`;
+        case "argument":
+          return `<span class="text-muted-foreground">${escaped}</span>`;
 
-case "argument":
-return `<span class="text-muted-foreground">${escaped}</span>`;
+        case "success":
+          return `<span class="text-green-400">${escaped}</span>`;
 
-case "success":
-return `<span class="text-green-400">${escaped}</span>`;
+        case "warning":
+          return `<span class="text-yellow-400">${escaped}</span>`;
 
-case "warning":
-return `<span class="text-yellow-400">${escaped}</span>`;
+        case "error":
+          return `<span class="text-red-400">${escaped}</span>`;
 
-case "error":
-return `<span class="text-red-400">${escaped}</span>`;
-
-default:
-return escaped;
-
-}
-
-}).join("");
-
+        default:
+          return escaped;
+      }
+    })
+    .join("");
 }

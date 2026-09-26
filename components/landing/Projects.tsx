@@ -39,7 +39,7 @@ export function IntegrationsSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-32 overflow-hidden" id="projects">
+    <section ref={sectionRef} className="min-h-screen relative py-32 overflow-hidden" id="projects">
       
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
@@ -145,7 +145,7 @@ export function IntegrationsSection() {
   <img
     src="./medium.webp"
     alt="Preview of my technical blog"
-    className="w-full h-56 object-cover"
+    className="w-full h-34 object-cover"
   />
 </div>
             </div>

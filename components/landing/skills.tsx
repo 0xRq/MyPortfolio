@@ -117,7 +117,7 @@ export function FeaturesSection() {
     <section
       id="skillset"
       ref={sectionRef}
-      className="relative py-32 overflow-hidden"
+      className="relative py-32 overflow-hidden lg:scroll-mt-30"
     >
        {/* Background */}
   <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
@@ -139,7 +139,7 @@ export function FeaturesSection() {
           <div>
             <p className="text-sm font-mono text-primary mb-3">// SKILLSET</p>
             <h2
-              className={`text-3xl lg:text-5xl font-semibold tracking-tight mb-6 transition-all duration-700 ${
+              className={`text-4xl lg:text-5xl font-semibold tracking-tight mb-6 transition-all duration-700 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >

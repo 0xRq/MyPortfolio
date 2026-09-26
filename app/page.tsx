@@ -4,11 +4,11 @@ import { useState } from "react";
 import BootScreen from "@/components/landing/bootscreen";
 import { Navigation } from "@/components/landing/navigation";
 import { HeroSection } from "@/components/landing/hero-section";
-import { FeaturesSection } from "@/components/landing/features-section";
+import { FeaturesSection } from "@/components/landing/skills";
 import { HowItWorksSection } from "@/components/landing/how-it-works-section";
 import { AboutSection } from "@/components/landing/AboutSection";
-import { MetricsSection } from "@/components/landing/metrics-section";
-import { IntegrationsSection } from "@/components/landing/integrations-section";
+import { MetricsSection } from "@/components/landing/certificates";
+import { IntegrationsSection } from "@/components/landing/Projects";
 import { CtaSection } from "@/components/landing/cta-section";
 import { FooterSection } from "@/components/landing/footer-section";
 

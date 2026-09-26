@@ -43,7 +43,7 @@ export function Navigation() {
               </span>
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-primary/10" />
             </div>
-            <span className="text-xl font-bold tracking-tight">Rayan</span>
+            
           </a>
 
           {/* Desktop Navigation */}
