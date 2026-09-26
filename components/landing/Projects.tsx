@@ -97,11 +97,11 @@ export function IntegrationsSection() {
           <div className="relative z-10 p-8 lg:p-12">
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               <div>
-                <h3 className="text-2xl lg:text-3xl font-semibold mb-4">
+                <h3 className="text-3xl lg:text-4xl font-semibold mb-4">
                   Check Out My Blog
                 </h3>
                 <p className="text-muted-foreground mb-6">
-                  A collection of writeups covering penetration testing, home lab projects, networking, and much more exciting stuff.
+                  A collection of writeups on Medium covering penetration testing, home lab projects, networking, and much more exciting stuff.
                 </p>
                 <Button
   asChild
@@ -145,7 +145,7 @@ export function IntegrationsSection() {
   <img
     src="./medium.webp"
     alt="Preview of my technical blog"
-    className="w-full h-34 object-cover"
+    className="w-full h-auto object-contain"
   />
 </div>
             </div>

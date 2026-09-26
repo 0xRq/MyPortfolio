@@ -160,7 +160,7 @@ export function HowItWorksSection() {
               </div>
 
               {/* Code content */}
-              <div className="p-6 font-mono text-sm min-h-[230px]">
+              <div className="p-6 font-mono text-sm h-[240px]">
                 <pre className="text-muted-foreground whitespace-pre-wrap break-words">
                   {steps[activeStep].code.split('\n').map((line, i) => (
                     <div 
