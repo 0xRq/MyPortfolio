@@ -32,7 +32,7 @@ const figtree = Figtree({
 
 export const metadata: Metadata = {
   title: 'Rayan Alrashed | Cybersecurity Student',
-  description: 'A cybersecurity student with a passion for technology, problem-solving, and continuous learning. I am dedicated to exploring the world of cybersecurity and contributing to the field through my skills and knowledge.',
+  description: 'A computer science & cybersecurity student with a passion for technology, problem-solving, and continuous learning.',
   generator: 'Sepi0l',
   icons: {
     icon: [
